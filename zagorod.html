@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noimageindex, noarchive">
+<meta name="googlebot" content="noindex, nofollow, noimageindex">
+<meta name="yandex" content="noindex, nofollow">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Питер: за городом</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap">
+<style>
+/* Layout: одна колонка до 1080px. Тёмная «невская» шапка с разведённым мостом, дальше шорт-лист, развилка, таблица всех мест, чек-лист перед бронью */
+:root{
+  --bg:#EDF0F2; --surface:#FFFFFF; --ink:#18212C; --muted:#586473; --line:#D3DAE1;
+  --neva:#1F3550; --on-neva:#F2EADC; --on-neva-muted:#B4C0CD;
+  --ochre:#D69A2D; --ochre-ink:#8A5A0C; --ochre-soft:#F6E7C8;
+  --good:#2B7549; --good-soft:#DCEEE2; --warn:#8F5E10; --warn-soft:#F6E9CC; --bad:#A93B32; --bad-soft:#F6DEDA;
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F151C; --surface:#17202A; --ink:#E6EBF0; --muted:#9AA7B4; --line:#283440;
+  --neva:#0A1622; --on-neva:#F2EADC; --on-neva-muted:#9FB0C2;
+  --ochre:#E2AA48; --ochre-ink:#EDBB62; --ochre-soft:#3A2E17;
+  --good:#6CC592; --good-soft:#173324; --warn:#E6B358; --warn-soft:#3A2D14; --bad:#EE8A80; --bad-soft:#3D1D1A;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0F151C; --surface:#17202A; --ink:#E6EBF0; --muted:#9AA7B4; --line:#283440;
+  --neva:#0A1622; --on-neva:#F2EADC; --on-neva-muted:#9FB0C2;
+  --ochre:#E2AA48; --ochre-ink:#EDBB62; --ochre-soft:#3A2E17;
+  --good:#6CC592; --good-soft:#173324; --warn:#E6B358; --warn-soft:#3A2D14; --bad:#EE8A80; --bad-soft:#3D1D1A;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ochre);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{text-wrap:balance;margin:0}
+h2{font:700 clamp(22px,3.2vw,30px)/1.15 var(--f-display);letter-spacing:-.01em}
+h3{font:600 19px/1.25 var(--f-body)}
+p{margin:0}
+.eyebrow{font:600 12px/1.2 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ochre-ink)}
+.lead{color:var(--muted);max-width:62ch}
+
+/* Hero */
+.hero{background:var(--neva);color:var(--on-neva)}
+.hero .wrap{padding-block:48px 40px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:end}
+.hero .eyebrow{color:var(--ochre)}
+.hero h1{font:700 clamp(30px,5.4vw,54px)/1.05 var(--f-display);letter-spacing:-.02em;margin-top:14px}
+.hero p.lead{color:var(--on-neva-muted);margin-top:18px;font-size:17px}
+.hero p.lead b{color:var(--on-neva);font-weight:600}
+.bridge{width:100%;max-width:300px;height:auto;justify-self:end}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.facts span{border:1px solid color-mix(in srgb,var(--on-neva) 28%,transparent);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--on-neva)}
+
+/* Nav */
+nav.jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.jump .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px;scrollbar-width:none}
+nav.jump a{white-space:nowrap;text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);padding:6px 10px;border-radius:8px}
+nav.jump a:hover{color:var(--ink);background:var(--surface)}
+
+section{padding-block:56px 8px}
+.sec-head{display:grid;gap:10px;margin-bottom:24px}
+
+/* Criteria */
+.criteria{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:0;counter-reset:c}
+.criteria li{counter-increment:c;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 14px 16px;display:grid;gap:6px;align-content:start}
+.criteria li::before{content:counter(c);font:700 22px/1 var(--f-display);color:var(--ochre)}
+.criteria b{font-weight:600}
+.criteria small{color:var(--muted);font-size:13.5px;line-height:1.4}
+.note{margin-top:14px;color:var(--muted);font-size:14.5px}
+
+/* Shortlist cards */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:16px;align-content:start}
+.card-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.card-top .addr{color:var(--muted);font-size:14px;margin-top:2px}
+.price{text-align:right;white-space:nowrap}
+.price b{display:block;font:700 24px/1.1 var(--f-body);font-variant-numeric:tabular-nums}
+.price small{color:var(--muted);font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:500;line-height:1.3;background:var(--bg);color:var(--ink)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.pill.plain::before{display:none}
+.pill.good{background:var(--good-soft);color:var(--good)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+.ratings{display:grid;gap:8px}
+.ratings h4{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rt-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.rt{--q:var(--muted);--qs:var(--bg);background:var(--qs);border-radius:10px;padding:9px 10px 10px;display:grid;gap:3px;align-content:start;min-width:0}
+.rt.good{--q:var(--good);--qs:var(--good-soft)}
+.rt.warn{--q:var(--warn);--qs:var(--warn-soft)}
+.rt.bad{--q:var(--bad);--qs:var(--bad-soft)}
+.rt.none{opacity:.7}
+.rt-src{font-size:12px;font-weight:600;color:var(--ink)}
+.rt-val{font:700 22px/1.05 var(--f-body);color:var(--q);font-variant-numeric:tabular-nums}
+.rt-val small{font-size:12px;font-weight:500;color:var(--muted);margin-left:1px}
+.rt-bar{height:4px;border-radius:2px;background:color-mix(in srgb,var(--q) 18%,transparent);overflow:hidden}
+.rt-bar i{display:block;height:100%;background:var(--q);border-radius:2px}
+.rt-n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.rt-flag{font-size:11px;font-weight:600;color:var(--warn)}
+.rt.few .rt-val{opacity:.75}
+.rt-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);margin-top:6px}
+.rt-legend span{display:inline-flex;align-items:center;gap:6px}
+.rt-legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14.5px}
+.pc ul{margin:6px 0 0;padding-left:18px;display:grid;gap:4px}
+.pc h4{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.pc .plus h4{color:var(--good)}
+.pc .minus h4{color:var(--bad)}
+.extra{border-top:1px dashed var(--line);padding-top:12px;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:center}
+.extra b{color:var(--ink);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600;font-size:14px;color:var(--ochre-ink);border:1px solid var(--ochre);border-radius:999px;padding:6px 14px;white-space:nowrap}
+.btn:hover{background:var(--ochre-soft)}
+.tier{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:8px 0 14px}
+.tier+.cards{margin-bottom:28px}
+.tier h3{font:700 18px/1.2 var(--f-display)}
+.tier span{color:var(--muted);font-size:14.5px}
+.rank{display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 8px;border-radius:8px;font:700 13px/1 var(--f-display);background:var(--ochre);color:var(--neva)}
+.rank.two{background:var(--line);color:var(--ink)}
+
+/* Fork */
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.path{border-radius:16px;padding:22px;border:1px solid var(--line);background:var(--surface);display:grid;gap:14px;align-content:start}
+.path .eyebrow{color:var(--muted)}
+.path h3{font:700 20px/1.2 var(--f-display)}
+.opt{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding-top:12px;border-top:1px solid var(--line)}
+.opt b{font-weight:600}
+.opt .sum{font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.opt small{grid-column:1/-1;color:var(--muted);font-size:14px}
+.next{margin-top:16px;background:var(--ochre-soft);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
+.next b{color:var(--ochre-ink)}
+
+/* Table */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg button{all:unset;cursor:pointer;padding:7px 12px;font-size:14px;font-weight:500;color:var(--muted)}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button:focus-visible{outline:2px solid var(--ochre);outline-offset:-2px}
+.toggle{display:inline-flex;gap:8px;align-items:center;font-size:14px;color:var(--muted);cursor:pointer;padding:6px 4px}
+.toggle input{accent-color:var(--ochre);width:16px;height:16px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:1120px;font-size:14.5px}
+th,td{text-align:left;padding:12px 14px;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--bg)}
+td.p{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+td .sub{color:var(--muted);font-size:13px}
+td.sub2{font-size:13.5px;min-width:120px}
+th.rc,td.rc{text-align:center;padding-left:6px;padding-right:6px}
+.tr{display:inline-grid;justify-items:center;gap:1px;min-width:58px;padding:5px 8px;border-radius:8px;background:var(--bg);font-variant-numeric:tabular-nums}
+.tr b{font-size:16px;font-weight:700}
+.tr small{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.tr.good{background:var(--good-soft)}.tr.good b{color:var(--good)}
+.tr.warn{background:var(--warn-soft)}.tr.warn b{color:var(--warn)}
+.tr.bad{background:var(--bad-soft)}.tr.bad b{color:var(--bad)}
+.tr.few b{opacity:.7}
+.tr.none{color:var(--muted);background:transparent}
+td a{font-weight:600;text-decoration-color:var(--ochre);text-underline-offset:3px}
+.cat{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;font:700 13px/1 var(--f-display)}
+.cat.A{background:var(--good-soft);color:var(--good)}
+.cat.B{background:var(--warn-soft);color:var(--warn)}
+.cat.C{background:var(--bad-soft);color:var(--bad)}
+.empty{padding:22px;color:var(--muted)}
+.legend{margin-top:10px;font-size:13.5px;color:var(--muted)}
+
+/* B + rejected */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px 20px}
+.list h3{padding-block:14px 6px}
+.item{padding-block:12px;border-top:1px solid var(--line);display:grid;gap:3px;font-size:14.5px}
+.item:first-of-type{border-top:0}
+.item b{font-weight:600}
+.item span{color:var(--muted)}
+
+/* Before booking */
+.prep{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:12px;align-content:start}
+.box ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:14.5px}
+.checks{list-style:none;padding:0!important}
+.checks label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.checks input{accent-color:var(--good);width:18px;height:18px;margin-top:2px;flex:none}
+.checks input:checked+span{color:var(--muted);text-decoration:line-through}
+.bridge-note{background:var(--neva);color:var(--on-neva);border:0}
+.bridge-note p{color:var(--on-neva-muted);font-size:14.5px}
+.bridge-note h3{color:var(--on-neva)}
+
+/* Gallery */
+.gal{display:grid;gap:8px;min-width:0}
+.gal:empty{display:none}
+.gal-main{all:unset;position:relative;display:block;border-radius:12px;overflow:hidden;aspect-ratio:16/10;max-width:100%;background:var(--bg);cursor:zoom-in}
+.gal-main:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+.gal-main img{width:100%;height:100%;object-fit:cover;display:block}
+.gal-cap{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(6,10,16,.72));color:#F4EFE6;font-size:13px;line-height:1.35}
+.gal-cap b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:600}
+.gal-count{position:absolute;top:10px;right:10px;background:rgba(6,10,16,.6);color:#F4EFE6;font-size:12px;font-weight:600;border-radius:999px;padding:3px 9px;font-variant-numeric:tabular-nums}
+.gal-strip{display:flex;gap:6px;overflow-x:auto;padding:2px 2px 4px;scrollbar-width:thin}
+.gal-strip button{all:unset;flex:none;width:64px;height:46px;border-radius:7px;overflow:hidden;cursor:pointer;opacity:.6;transition:opacity .15s}
+.gal-strip button:hover{opacity:.9}
+.gal-strip button[aria-current="true"]{opacity:1;box-shadow:0 0 0 2px var(--ochre)}
+.gal-strip button:focus-visible{outline:2px solid var(--ochre);outline-offset:1px}
+.gal-strip img{width:100%;height:100%;object-fit:cover;display:block}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(6,10,16,.94);color:#F4EFE6;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;padding-top:max(12px,env(safe-area-inset-top,0px));padding-bottom:max(14px,env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px}
+.lb-top b{font-weight:600}
+.lb-stage{position:relative;display:grid;place-items:center;min-height:0}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.lb button{all:unset;cursor:pointer;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(244,239,230,.12);font-size:22px;line-height:1}
+.lb button:hover{background:rgba(244,239,230,.22)}
+.lb button:focus-visible{outline:2px solid var(--ochre)}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%)}
+.lb-prev{left:0}.lb-next{right:0}
+.lb-cap{text-align:center;font-size:14px;color:#D6CFC2;max-width:70ch;margin:0 auto}
+.kind{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ochre-ink);margin-bottom:3px}
+.cond{background:var(--warn-soft);color:var(--warn);border-radius:10px;padding:9px 12px;font-size:13.5px;font-weight:600;line-height:1.4}
+/* Breakfast mini in cards */
+.bf-mini{display:grid;gap:6px;font-size:14px}
+.bf-mini h4{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-ink)}
+.bf-mini ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.bf-mini li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:baseline}
+.bf-mini a{font-weight:600;text-decoration:none}
+.bf-mini a:hover{text-decoration:underline;text-decoration-color:var(--ochre)}
+.bf-mini .t{color:var(--muted);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bf-mini .star{color:var(--ochre-ink);font-size:12px;font-weight:600;margin-left:6px}
+.one{max-width:720px}
+/* Map */
+.mapbox{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px;align-items:start}
+.mapfig{margin:0;display:grid;gap:6px}
+.mapfig img{width:100%;height:auto;max-width:100%;aspect-ratio:650/450;border-radius:14px;border:1px solid var(--line);display:block}
+.mapfig figcaption{font-size:12px;color:var(--muted)}
+.maplist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.maplist li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;font-size:14.5px}
+.maplist a{font-weight:600;text-decoration-color:var(--ochre);text-underline-offset:3px}
+.maplist small{display:block;color:var(--muted);font-size:13px}
+.mk{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:12px;font-weight:700;color:#fff;font-variant-numeric:tabular-nums}
+.mk.a{background:#D9902A}
+.mk.b{background:#2F6FB5}
+.kind .mk{width:18px;height:18px;font-size:10.5px;margin-right:6px;vertical-align:1px}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+@media (max-width:760px){.mapbox{grid-template-columns:1fr}}
+/* Breakfast */
+.seg.scroll{max-width:100%;overflow-x:auto;scrollbar-width:none}
+.seg.scroll button{white-space:nowrap}
+.cafes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cafe{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:8px;align-content:start;font-size:14px}
+.cafe.best{border-color:var(--ochre);box-shadow:inset 0 0 0 1px var(--ochre)}
+.cafe-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.cafe-top b{font-size:16px;font-weight:600}
+.cafe .addr{color:var(--muted);font-size:13.5px}
+.cafe dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px}
+.cafe dt{color:var(--muted)}
+.cafe dd{margin:0;font-variant-numeric:tabular-nums}
+.cafe .why{color:var(--ink)}
+.cafe .kids{color:var(--muted);font-size:13px;line-height:1.45}
+.cafe .best-tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--ochre-ink)}
+.walk{white-space:nowrap;font-weight:600;font-size:13px;border-radius:999px;padding:3px 9px;background:var(--bg)}
+.cafe a.map{font-weight:600;font-size:13.5px;color:var(--ochre-ink);text-decoration:none}
+.cafe a.map:hover{text-decoration:underline}
+@media (max-width:900px){.cafes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cafes{grid-template-columns:1fr}}
+footer{padding-block:48px 56px;color:var(--muted);font-size:13.5px}
+footer .wrap{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:20px}
+
+@media (max-width:900px){
+  .criteria{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .criteria li:last-child{grid-column:1/-1}
+}
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:36px 32px}
+  .bridge{justify-self:start;max-width:220px;order:-1}
+  .cards,.fork,.two,.prep{grid-template-columns:1fr}
+}
+@media (max-width:440px){
+  .pc{grid-template-columns:1fr}
+  .rt-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card{padding:18px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .leaf{transform-box:fill-box;animation:raise 1.6s cubic-bezier(.3,.7,.2,1) both}
+  .leaf.l{transform-origin:0% 100%}
+  .leaf.r{transform-origin:100% 100%}
+  @keyframes raise{from{transform:rotate(var(--from))}to{transform:rotate(0)}}
+}
+
+.room{margin:0;font-size:14.5px;color:var(--ink)}
+.more{border-top:1px dashed var(--line);padding-top:10px;font-size:14px}
+.more summary{cursor:pointer;font-weight:600;color:var(--ochre-ink)}
+.more dl{display:grid;grid-template-columns:minmax(0,1fr);gap:4px;margin:10px 0 0}
+.more dt{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.more dd{margin:0;line-height:1.5}
+.mk.a{background:#2E8B57}.mk.b{background:#7A8794}
+.back{display:inline-flex;margin-bottom:14px;color:var(--on-neva-muted);text-decoration:none;font-weight:600;font-size:14px}
+.back:hover{color:var(--on-neva)}
+.card[hidden]{display:none!important}
+</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="wrap" style="grid-template-columns:minmax(0,1fr)">
+    <div>
+      <a class="back" href="./">← Где жить в городе</a>
+      <div class="eyebrow">Ленобласть · 25–27 октября 2026 · 2 ночи</div>
+      <h1>Две ночи за городом</h1>
+      <p class="lead">Эко-отели, загородные отели и дома отдыха до полутора часов на машине. Проверили наличие и цену на пятерых: 3 взрослых, сын 9 лет и малыш. <b>Свободно на наши даты: 5 из 7.</b></p>
+      <div class="facts"><span>Вс 25 → вт 27 октября</span><span>На машине</span><span>Нужна детская кроватка</span><span>Питание — любое</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="map">
+    <div class="wrap">
+      <div class="sec-head"><div class="eyebrow">Где это</div><h2>Все места на карте</h2>
+        <p class="lead">Зелёные — свободно на наши даты, серые — нет мест онлайн или не проверено. Флажок — центр Петербурга.</p></div>
+      <div class="mapbox">
+        <figure class="mapfig"><img src="map/zagorod.png" width="650" height="450" alt="Карта Ленобласти с отмеченными загородными отелями"><figcaption>Карта © Яндекс</figcaption></figure>
+        <ol class="maplist"><li><span class="mk a">1</span><span><b>Репинская Ривьера 4*</b><small>Репино, Курортный район · свободно</small></span></li><li><span class="mk a">2</span><span><b>AZIMUT Отель &amp; СПА Репино 4*</b><small>Репино, Курортный район · свободно</small></span></li><li><span class="mk a">3</span><span><b>Курорт «Большое Борково»</b><small>Орехово, Приозерский р-н (Приозерское направление) · свободно</small></span></li><li><span class="mk a">4</span><span><b>СПА-отель «Гелиос»</b><small>Зеленогорск, Курортный район (Приморское шоссе) · свободно</small></span></li><li><span class="mk a">5</span><span><b>Дом творчества писателей</b><small>Комарово, Курортный район · свободно</small></span></li><li><span class="mk b">6</span><span><b>Отель «Царство-Королевство»</b><small>Рощино, Выборгское направление · не проверено</small></span></li><li><span class="mk b">7</span><span><b>Курортный отель Загородный клуб «Скандинавия» и СПА</b><small>Сестрорецк, Курортный район · мест нет</small></span></li></ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="list">
+    <div class="wrap">
+      <div class="sec-head"><div class="eyebrow">Подборка</div><h2>Места за городом</h2>
+        <p class="lead">Сначала свободные. Цена — за 2 ночи на всех; что в неё входит, раскрыто в «Подробнее». Места к югу и востоку от города ещё собираются — появятся здесь же.</p></div>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Направление">
+          <button type="button" id="r-all" data-region="all" aria-pressed="true">Все</button>
+          <button type="button" id="r-north" data-region="north" aria-pressed="false">Север</button>
+          <button type="button" id="r-south" data-region="south" aria-pressed="false">Юг, запад, восток</button>
+        </div>
+        <label class="toggle" for="f-free"><input type="checkbox" id="f-free"> Только свободные</label>
+      </div>
+      <div class="cards">
+        <article class="card" data-region="north" data-avail="1">
+          <div class="gal" data-place="repinskaya-riviera" data-name="Репинская Ривьера 4*"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk a">1</span>загородный отель</div><h3>Репинская Ривьера 4*</h3><div class="addr">Репино, Курортный район · ≈45–55 мин от центра (≈45 км по Приморскому шоссе / ЗСД)</div></div>
+            <div class="price"><b>74 580 ₽</b><small>за 2 ночи</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill good">Свободно на 25–27 октября</span>
+            <span class="pill good">Парковка: Бесплатная открытая парковка на территории (подтверждено в…</span>
+          </div>
+          <p class="room">Один «Люкс с террасой» 41 м², до 4 мест: двуспальная кровать + диван (виджет принял 5 гостей: 3 взр., ребёнок 9 лет и малыш до 1 года, малыш без отдельного места).</p>
+          <div class="ratings"><h4>Отзывы на площадках</h4><div class="rt-row"><div class="rt warn"><span class="rt-src">Островок</span><b class="rt-val">8,5<small>/10</small></b><span class="rt-bar"><i style="width:85%"></i></span><span class="rt-n">95 оценок</span></div><div class="rt good"><span class="rt-src">Яндекс</span><b class="rt-val">5,0<small>/5</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n"></span></div><div class="rt good"><span class="rt-src">2ГИС</span><b class="rt-val">4,9<small>/5</small></b><span class="rt-bar"><i style="width:98%"></i></span><span class="rt-n">1 119 оценок</span></div><div class="rt warn"><span class="rt-src">Google</span><b class="rt-val">4,4<small>/5</small></b><span class="rt-bar"><i style="width:88%"></i></span><span class="rt-n">1 507 оценок</span></div></div></div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Первая береговая линия и сосновый парк, залив и пляж в двух шагах; тихая, ухоженная территория (отзывы Яндекс Карт)</li><li>Мощный спа: крытый и открытый подогреваемый бассейн 25 м, гидротермальная зона и три бани; в тариф с завтраком уже входит МЕДИ СПА</li><li>Очень приспособлен для семей с малышами: манеж, детская комната с няней, детский бассейн, площадки, детское меню и стульчики (отзывы 2025–2026)</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Дорого: обед/ужин по шведскому столу ≈2 500 ₽/чел, ресторан выше среднего, рядом нет магазина — воду и перекусы лучше везти с собой</li><li>Тариф «без питания» в выдаче не нашёл: на семью из 5 человек выходит 74–101 тыс. ₽ за 2 ночи в зависимости от питания; многие категории на эти даты уже «Распродано»</li><li>Смешанные оценки на Tripadvisor (3,7) и Островке (8,5; чистота 7,3, цена/качество 7,0): жалобы «цена не соответствует качеству», усталые номера, громкая музыка на мероприятиях, неудобные подушки</li></ul></div>
+          </div>
+          <details class="more"><summary>Подробнее: цена, питание, кроватка, детям</summary><dl><dt>Размещение</dt><dd>Один «Люкс с террасой» 41 м², до 4 мест: двуспальная кровать + диван (виджет принял 5 гостей: 3 взр., ребёнок 9 лет и малыш до 1 года, малыш без отдельного места). Альтернатива — «Сьют с видом на залив» 62–65 м², 2 санузла, на 4 взрослых + 1 ребёнка до 12 лет, 5 этаж (77 680 ₽ за 2 ночи для 4 гостей). Заезд в люксах с 17:00, выезд до 15:00.</dd><dt>Цена</dt><dd>74 580 ₽ за 2 ночи — «Люкс с террасой» (41 м²), тариф «Завтрак у Залива»: завтрак + гидротермальная зона МЕДИ СПА; бесплатная отмена до 25.10 00:00, нужна предоплата. Другие категории на эти даты: «Сьют с видом на залив» (63 м²) — 77 680 ₽ за 2 ночи для 4 гостей (для 5 гостей не проверял); «Семейный Комфорт» (до 4 мест) на эти даты недоступен, «Джуниор Сюит» и «Люкс двухкомнатный» — «Распродано». На Островке мест на эти даты нет (у отеля нет живого инвентаря).</dd><dt>Питание</dt><dd>Тарифы Люкса с террасой за 2 ночи на 5 гостей: завтрак «шведский стол» + гидротермальная зона — 74 580 ₽; полупансион (завтрак + обед ИЛИ завтрак + ужин) — 87 780 ₽; полный пансион (завтрак, обед, ужин) — 100 980 ₽. Тарифа без питания в выдаче не было. Рестораны: «Артишок» (шведский стол, 1 этаж), «Альманах» (à la carte, 11:00–23:00), бистро «РиФФ». По отзыву (2025), шведский стол на обед/ужин вне тарифа ≈2 500 ₽/чел, ресторан дорогой.</dd><dt>Детская кроватка</dt><dd>Сайт отеля про кроватку молчит; на Островке: «детская люлька — количество и стоимость уточнять». По отзывам на Яндекс Картах (2025–2026) в номер приносили манеж с подушкой и одеялом, детский халат, детское бельё, подставку и накладку на унитаз; детские стульчики в ресторане, детское меню. Заказать манеж заранее при бронировании.</dd><dt>Парковка</dt><dd>Бесплатная открытая парковка на территории (подтверждено в виджете бронирования и отзывом 2026 г.); есть зарядка электромобилей; пандус для колясок.</dd><dt>Детям</dt><dd>Детский мини-клуб «Совенок» в ресторане «Артишок» (ежедневно 8:00–20:30; воспитатели с 4 лет, младше — с родителем; няня по запросу), детская комната с аниматором, 2 детские площадки (для старших и младших), по отзывам — отдельный небольшой детский бассейн в МЕДИ СПА, детские круги и нарукавники. Внимание: 2ГИС помечает МЕДИ СПА как «для взрослых» — правила допуска детей в гидротермальную зону и бани уточнить по телефону 8 800 555 5494.</dd><dt>Чем заняться</dt><dd>Первая линия у Финского залива и пляж (прогулки по берегу и сосновому парку), МЕДИ СПА с гидротермальной зоной и банями (финская сауна, русская парная, хамам), 25-метровые бассейны (крытый и открытый с подогревом по отзывам), фитнес, падел-теннис, прокат велосипедов (по отзыву — по велодорожке до Комарово), самокатов, SUP, лыж; усадьба Репина «Пенаты» — около 14 минут пешком (по данным Google).</dd><dt>Где проверяли</dt><dd>https://hotel-repino.ru/booking/ (виджет TravelLine, проверено 16.10.2026: 3 взр. + ребёнок 9 лет + малыш до 1 года, 25–27.10.2026)</dd></dl></details>
+          <div class="extra">
+            <span>Санкт-Петербург, пос. Репино, Приморское шоссе, 394, лит. Б</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/?pt=29.88131,60.15947&amp;z=14&amp;l=map" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://hotel-repino.ru/" target="_blank" rel="noopener">Сайт ↗</a></span>
+          </div>
+        </article>
+        <article class="card" data-region="north" data-avail="1">
+          <div class="gal" data-place="azimut-repino" data-name="AZIMUT Отель &amp; СПА Репино 4*"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk a">2</span>загородный отель</div><h3>AZIMUT Отель &amp; СПА Репино 4*</h3><div class="addr">Репино, Курортный район · ≈45–60 мин от центра (по данным отеля — от 40 мин по…</div></div>
+            <div class="price"><b>73 000 ₽</b><small>за 2 ночи</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill good">Свободно на 25–27 октября</span>
+            <span class="pill good">Парковка: Бесплатная наземная и подземная парковка на территории…</span>
+          </div>
+          <p class="room">Ни в одну категорию не помещаются 5 человек (максимум 4 места в номере, а малыш считается гостем), поэтому считаю 2 номера.</p>
+          <div class="ratings"><h4>Отзывы на площадках</h4><div class="rt-row"><div class="rt bad"><span class="rt-src">Островок</span><b class="rt-val">8,4<small>/10</small></b><span class="rt-bar"><i style="width:84%"></i></span><span class="rt-n">263 оценки</span></div><div class="rt good"><span class="rt-src">Яндекс</span><b class="rt-val">5,0<small>/5</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n"></span></div><div class="rt good"><span class="rt-src">2ГИС</span><b class="rt-val">4,9<small>/5</small></b><span class="rt-bar"><i style="width:98%"></i></span><span class="rt-n">133 оценки</span></div><div class="rt warn"><span class="rt-src">Google</span><b class="rt-val">4,5<small>/5</small></b><span class="rt-bar"><i style="width:90%"></i></span><span class="rt-n">530 оценок</span></div></div></div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Сильный спа: большой бассейн 25 м, хамам, сауна, тренажёрка бесплатно для гостей, открыто 08:00–23:50; чистый, тёплый (отзывы Островка, 2ГИС)</li><li>Хороший шведский завтрак, просторные и чистые номера с удобными кроватями; бесплатная подземная парковка; лес и тишина, пляж в 10–15 минутах пешком</li><li>Для семей: детская комната, площадка, прокат велосипедов, детское меню и стульчик, смежные номера «Стандарт»</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Сервис на ресепшн неровный: очереди на заселение, местами неприветливый или «не клиентоориентированный» персонал (Островок, 2ГИС 2025–2026)</li><li>Номера «подуставшие»: старые фены, телевизоры, ковролин; в отзывах просят ремонт; цена местами «не стоит своих денег» (2ГИС, Островок)</li><li>Ужин дорогой (≈2 200 ₽ с человека на шведском столе) и выбор в ресторане скромный; слабый Wi-Fi по вечерам; по выходным многолюдно; в окрестностях слышны электричка и мотоциклы</li></ul></div>
+          </div>
+          <details class="more"><summary>Подробнее: цена, питание, кроватка, детям</summary><dl><dt>Размещение</dt><dd>Ни в одну категорию не помещаются 5 человек (максимум 4 места в номере, а малыш считается гостем), поэтому считаю 2 номера. Вариант А: «Стандарт улучшенный» 42 м² (двуспальная кровать + диван/кресло, балкон) для 2 взр. + ребёнок 9 + малыш и отдельный «Стандарт» 31 м² для 3-го взрослого. Вариант Б: «Семейный номер» 57 м² (по отзыву — двухкомнатный) для семьи с детьми + «Стандарт» для 3-го взрослого. На сайте отеля указано, что есть смежные номера категории «Стандарт» (пожелание — в комментарии к брони или на reservations.repino@azimuthotels.com), цену именно такой пары не проверял. Свободных номеров категорий Делюкс/Люкс/Гранд/Семейный люкс на эти даты нет.</dd><dt>Цена</dt><dd>≈73 000 ₽ за 2 ночи за 2 номера, завтрак включён (на сайте отеля, тариф «лучшая цена дня»: можно без предоплаты, бесплатная отмена): Стандарт улучшенный 42 м² для 2 взрослых + ребёнок 9 лет + малыш 0 лет = 43 000 ₽ и отдельный Стандарт 31 м² для 3-го взрослого = 30 000 ₽. Вариант попросторнее: Семейный номер 57 м² (2 взр. + 2 детей) 49 000 ₽ + Стандарт для 1 взрослого 30 000 ₽ = 79 000 ₽. Цены в вилке без скидки по карте AZIMUT Bonus; с Bonus ~10% дешевле (например 39 100 + 27 000 = 66 100 ₽; условия вступления в программу не проверял). В стоимость входят бассейн, хамам, финская сауна и тренажёрный зал. На Островке на эти даты номеров нет.</dd><dt>Питание</dt><dd>Завтрак (шведский стол) включён во все найденные тарифы; отдельно завтрак стоит 1 300 ₽ с взрослого, дети 0–6 лет бесплатно, 7–12 лет скидка 50% (08:00–11:00, ресторан «Бисквит»). Тариф «полупансион» (завтрак+ужин): Семейный номер на 2 взр.+2 детей 65 000 ₽ (против 49 000 с завтраком, т.е. +16 000 ₽ за 2 ночи), для одного взрослого +4 000 ₽ за 2 ночи к тарифу с завтраком (проверено для Семейного номера и Спа Улучшенный). Тариф «полный пансион» (завтрак+обед+ужин): Семейный номер 81 000 ₽ без Bonus (+32 000 ₽ к завтраку). Для Стандарта/Стандарта улучшенного тарифы с обедом/ужином в выдаче не показывались. «Без питания» тарифа в выдаче не было. Ужин по меню а-ля карт в ресторане «Этюд» и лобби-баре; по отзывам, шведский стол на ужин бывает не всегда (только для групп), а где-то он стоит ~2 200 ₽ с человека. Детское меню — по запросу, детский стульчик есть. Доставка еды в номер: +10% сервисный сбор.</dd><dt>Детская кроватка</dt><dd>Детская люлька-манеж приносится по запросу (по сайту отеля; заранее лучше заказать). По данным Островка — 2 000 ₽ с номера за ночь; для малыша 0 лет цена в тарифах выше не выделена, наличие на конкретную дату не подтверждено — нужно уточнить при брони. Дополнительное место для ребёнка до 18 лет в номерах кроме «Престиж»/«Восточный».</dd><dt>Парковка</dt><dd>Бесплатная наземная и подземная парковка на территории (подтверждено на сайте отеля и в отзывах). Есть стоянка для велосипедов.</dd><dt>Детям</dt><dd>Детская игровая комната и детский клуб (по отзыву — с няней), детская площадка с горками и качелями, баскетбольное кольцо, прокат детских велосипедов/самокатов/роликов (по сайту), детские халаты и тапочки, детское меню, в спа маленькие халаты. Детского бассейна нет — взрослый 25-метровый бассейн с разной глубиной. Детям до 14 лет в бассейне можно находиться до 22:00 только с взрослыми; бассейн открыт 08:00–23:50 с техперерывами 13:00–13:30 и 18:00–18:30. Комнаты для колясок нет.</dd><dt>Чем заняться</dt><dd>Бассейн 25 м, хамам, финская сауна и тренажёрный зал входят в проживание; платные спа-процедуры и массажи, инфракрасная соляная сауна, залы для йоги/единоборств, бильярд, настольный теннис. Прогулки по сосновому лесу и до залива (пляж Репино ≈900 м, 10–15 мин пешком), прокат велосипедов, музей-усадьба «Пенаты» (Репин) и дача Шостаковича рядом, живая музыка на веранде по выходным (по отзывам). Электричка до станции Репино ~10 мин от отеля. В конце октября — прежде всего спа/бассейн и лесные прогулки; на сайте отеля упоминалась только разовая техобслужка бассейна 19.10 (на наши даты о закрытии не сообщалось, но периодически бывает — уточнить).</dd><dt>Где проверяли</dt><dd>https://azimuthotels.com/ru/tl/availability?hotel=102&amp;checkIn=2026-10-25&amp;checkOut=2026-10-27&amp;nights=2&amp;adults=3&amp;children=2&amp;ages=9%2C0 (официальный сайт, виджет TravelLine); Островок: https://ostrovok.ru/hotel/russia/repino/mid8743925/forrestmix_klub_hotel/?dates=25.10.2026-27.10.2026&amp;guests=3and0.9</dd></dl></details>
+          <div class="extra">
+            <span>Санкт-Петербург, пос. Репино, ул. Луговая, д. 10А</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/?pt=29.8712,60.1691&amp;z=14&amp;l=map" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://azimuthotels.com/ru/saint-petersburg/azimut-hotel-repino" target="_blank" rel="noopener">Сайт ↗</a></span>
+          </div>
+        </article>
+        <article class="card" data-region="north" data-avail="1">
+          <div class="gal" data-place="bolshoe-borkovo" data-name="Курорт «Большое Борково»"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk a">3</span>загородный отель</div><h3>Курорт «Большое Борково»</h3><div class="addr">Орехово, Приозерский р-н (Приозерское направление) · ≈1 ч – 1 ч 15 мин от центра (≈58 км;</div></div>
+            <div class="price"><b>107 200 ₽</b><small>за 2 ночи</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill good">Свободно на 25–27 октября</span>
+            <span class="pill good">Парковка: Бесплатная парковка на территории (по данным Островка и…</span>
+          </div>
+          <p class="room">Один номер на 5 человек не подходит: Делюкс 40 м² (+терраса 11 м²) — 2 гостя + 1 доп.</p>
+          <div class="ratings"><h4>Отзывы на площадках</h4><div class="rt-row"><div class="rt warn few"><span class="rt-src">Островок</span><b class="rt-val">8,7<small>/10</small></b><span class="rt-bar"><i style="width:87%"></i></span><span class="rt-n">4 оценки</span><span class="rt-flag">мало отзывов</span></div><div class="rt good"><span class="rt-src">Яндекс</span><b class="rt-val">5,0<small>/5</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n"></span></div><div class="rt none"><span class="rt-src">2ГИС</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div></div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Красивое место в сосновом лесу у озера, тишина, мало людей, приветливый персонал (Островок, Яндекс)</li><li>Просторные номера с террасой, проектором и панорамными окнами; ресторан с камином и карельским меню, баня/бассейны с видом на озеро (Яндекс Карты)</li><li>Территорию обрабатывают от клещей/комаров; бесплатные лодки/велосипеды осенью; ягоды, грибы, пешие маршруты (Островок)</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>СПА для детей только 12:00–15:00 (отзыв Островка, июль 2026)</li><li>Последние ≈3,5 км — лесная дорога с плохим покрытием; в отзыве на Островке (5,6/10, авг. 2026): маленькое однообразное меню, задержки в ресторане, номера-коннект с ТВ вместо проектора, слабый гигиенический набор</li><li>Дорого для 5 человек: нужны 2 номера (≈107–117 тыс. ₽ за 2 ночи); кроватка не подтверждена</li></ul></div>
+          </div>
+          <details class="more"><summary>Подробнее: цена, питание, кроватка, детям</summary><dl><dt>Размещение</dt><dd>Один номер на 5 человек не подходит: Делюкс 40 м² (+терраса 11 м²) — 2 гостя + 1 доп. место (макс. 3), Пентхаус 50 м² — тоже макс. 3. Нужны 2 номера (есть «номера-коннект»; отель сообщает о двух таких номерах). Делюкс: кровать king size или две односпальные, раскладное кресло/диван-кровать, мини-бар, кофемашина, кондиционер, тёплый пол, терраса, часть номеров с проектором вместо ТВ. Ребёнок до 3 лет на доп. месте — бесплатно. Площадь по другой странице сайта — 51 м² (расхождение на сайте).</dd><dt>Цена</dt><dd>≈107 200 ₽ за 2 ночи за ДВА номера Делюкс (сайт отеля, предоплата, бесплатная отмена до 23.10.2026 15:00): номер 1 (2 взр. + ребёнок 9 лет) — 56 600 ₽ без завтрака или 66 600 ₽ с завтраком; номер 2 (1 взр. + малыш 0 лет) — 50 600 ₽ (тариф с завтраком; другого тарифа в выдаче не было). Итого 107 200 ₽ (без завтрака в ном. 1) … 117 200 ₽ (завтраки в обоих). На Островке для этих дат номеров нет (rates null, «нет номеров на выбранные даты»). Отель сам предлагает скидку 20% на второй номер-коннект для детей до 14 лет (по телефону; к малышу+взрослому может не относиться — уточнить).</dd><dt>Питание</dt><dd>Тариф «для тех, кто любит свободу» — без питания (Делюкс 2 взр.+реб.: 56 600 ₽ за 2 ночи); «Тариф с завтраком у озера» — завтрак включён (66 600 ₽ за 2 ночи для 2 взр.+реб.; 50 600 ₽ для 1 взр.+малыш). Полупансион/полный пансион в выдаче не видел. Ресторан «Ягодки» на территории (авторская кухня, гриль-меню, ДЕТСКОЕ меню): вс–чт 9:00–22:00, пт–сб 9:00–23:00; цены меню не смотрел. Из отзыва на Островке: меню завтраков небольшое и однообразное, были задержки в ресторане.</dd><dt>Детская кроватка</dt><dd>Детскую кроватку на сайте не нашёл (в услугах номера в виджете только «размещение собаки»). Островок: «детская люлька — количество и стоимость нужно уточнять». Малыш до 3 лет размещается на доп. месте бесплатно. Нужно заранее уточнить по телефону +7 (977) 089-53-30, есть ли кроватка — не проверено.</dd><dt>Парковка</dt><dd>Бесплатная парковка на территории (по данным Островка и Яндекса).</dd><dt>Детям</dt><dd>Детское меню в ресторане; СПА «Орешки»: проживающим детям до 14 лет бесплатно, но время для отдыха с детьми только 12:00–15:00 (отзыв Островка: ограничение неудобно); аниматоров/игровой комнаты на сайте не видел. Из активностей на сайте: экотропы, велосипеды, лодки, SUP, рыбалка, настольный теннис, центр развлечений, веревочный парк, квадроциклы, автодром, лыжные трассы Игоры в 6 км (сезонность не проверена). Территория обрабатывается от клещей и комаров.</dd><dt>Чем заняться</dt><dd>СПА-комплекс «Орешки» (12:00–20:00): сауна, баня, хаммам, крытый бассейн «Арктика» +17°C, открытый подогреваемый бассейн «Небо» +27°C с видом на озеро, купель +38°C. Для гостей: 3 000 ₽ в будни / 5 000 ₽ в выходные с человека (взрослые; 25.10 — вс), дети до 14 лет проживающие — бесплатно. Спортзал бесплатно 9–20. Осенняя акция: лодки, SUP, велосипеды для проживающих бесплатно до конца месяца (по сайту, на 16.10). Озеро Большое Борково в 239 м, лесные/эко-тропы, ягоды/грибы, кинопроектор в номере. На сайте: 9–16.10 ресторан и СПА работали только для проживающих, с 17.10 — в обычном режиме.</dd><dt>Где проверяли</dt><dd>https://bolshoeborkovo.ru/ (виджет «Бронируй Онлайн», смотрел 16.10.2026); Островок: https://ostrovok.ru/hotel/russia/orekhovo/mid13343492/bolshoye_borkovo_hotel/</dd></dl></details>
+          <div class="extra">
+            <span>Ленинградская обл., Приозерский р-н, Сосновское с.п., п. при ж/д ст. Орехово, ул. Спортивная, 9к1</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/?pt=30.28515,60.4715&amp;z=14&amp;l=map" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://bolshoeborkovo.ru/" target="_blank" rel="noopener">Сайт ↗</a></span>
+          </div>
+        </article>
+        <article class="card" data-region="north" data-avail="1">
+          <div class="gal" data-place="gelios-zelenogorsk" data-name="СПА-отель «Гелиос»"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk a">4</span>загородный отель</div><h3>СПА-отель «Гелиос»</h3><div class="addr">Зеленогорск, Курортный район (Приморское шоссе) · ≈55–60 мин от центра Петербурга без пробок (≈50 км по…</div></div>
+            <div class="price"><b>36 400 ₽</b><small>за 2 ночи</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill good">Свободно на 25–27 октября</span>
+            <span class="pill warn">Парковка: Бесплатная охраняемая парковка (входит в стоимость по сайту;</span>
+          </div>
+          <p class="room">«Комфорт семейный (Джуниор сюит)», 7–8 этаж, 32 м², 2 комнаты, «4+1» место.</p>
+          <div class="ratings"><h4>Отзывы на площадках</h4><div class="rt-row"><div class="rt bad"><span class="rt-src">Островок</span><b class="rt-val">6,6<small>/10</small></b><span class="rt-bar"><i style="width:66%"></i></span><span class="rt-n">354 оценки</span></div><div class="rt none"><span class="rt-src">Яндекс</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div><div class="rt good"><span class="rt-src">2ГИС</span><b class="rt-val">4,7<small>/5</small></b><span class="rt-bar"><i style="width:94%"></i></span><span class="rt-n"></span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div></div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Большая парковая территория, залив в 500 м, свежий ремонт номеров и общих зон (отзывы 2025–2026)</li><li>Питание «шведский стол» разнообразное, есть здоровое/детское меню; панорамный ресторан «Я и Ты» хвалят (отзывы 2025–2026)</li><li>СПА-комплекс с массажами и банным комплексом, много развлечений для детей, парковка крытая и на улице, автобус рядом (отзывы)</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Рейтинг Островка всего 6,6 из 10 при 354 отзывах; «Цена/Качество» 6,9, «Номер» 7,1, «Чистота» 7,2</li><li>Отзывы с претензиями: еда и «отношение руководства к спорным ситуациям» (4,2 из 10, май 2026); сломанная кровать при заселении и небрежная уборка (июнь 2025); хаотичная организация СПА-программ при высоких ценах (июнь 2025)</li><li>Отель позиционируется для детей, но один отзыв (2023) жалуется, что нет бесплатной детской площадки/комнаты и чайника в номере; бассейн не при отеле; свободен всего 1 семейный номер</li></ul></div>
+          </div>
+          <details class="more"><summary>Подробнее: цена, питание, кроватка, детям</summary><dl><dt>Размещение</dt><dd>«Комфорт семейный (Джуниор сюит)», 7–8 этаж, 32 м², 2 комнаты, «4+1» место. По сайту отеля: в 1-й комнате двуспальная кровать 160×200 и кухонная зона (мини-холодильник, микроволновка, чайник, стол), во 2-й комнате две односпальные кровати 90×200; ванна, халаты, Wi-Fi, ТВ. (Островок описывает как «двуспальная кровать и диван» и «допкровати не включены» — расхождение.) На 5 человек: 3 взрослых + 9-летний ребёнок занимают 4 основных места (двуспальная + 2 односпальные), малыш — в детской кроватке; доп. спальное место (еврораскладушка) в этой категории по прейскуранту не предусмотрено.</dd><dt>Цена</dt><dd>36 400 ₽ за 2 ночи с завтраком (шведский стол) — «Комфорт семейный (Джуниор сюит)», 32 м², 2 комнаты, расчёт на 5 гостей (3 взр. + ребёнок 9 лет + младенец). Цена совпадает на сайте отеля и на Островке; на сайте «остался 1 номер». Это единственный свободный номер для нашего состава (дачи и коттеджи Гелиоса (№24, №3 А/Б/В, «Романтик», №2 Б) в виджете показаны «Распродано», остальные дачи не просматривал). Отмена: на сайте отеля бесплатно за сутки до заезда, позже удерживают 1 сутки; на Островке тариф без бесплатной отмены (штраф 100%). Если младенец без отдельного места бесплатен (правило отеля: до 6 лет бесплатно, не более 1 ребёнка на номер) — расчёт на 4 гостей: 30 500 ₽ с завтраком; уточнить у отеля.</dd><dt>Питание</dt><dd>Все тарифы с питанием «шведский стол» (ресторан «Гелиос»; также панорамный ресторан «Я и Ты» по меню). Без питания на сайте и Островке не продают — минимум завтрак. Цены за 2 ночи на 5 гостей (3 взр. + ребёнок 9 лет + младенец): завтрак 36 400 ₽; полупансион (завтрак+обед или завтрак+ужин) 43 700 ₽; полный пансион 50 500 ₽. На 4 гостей (без младенца): 30 500 / 35 900 / 40 600 ₽. Тариф «Льготный» (для 60+, инвалидов, многодетных, студентов): полупансион 31 900 ₽, полный пансион 38 600 ₽ (на 5 гостей) — нам, вероятно, не подходит, уточнить. Туры со СПА-программами дороже (от 54 100 ₽ на 4 гостей).</dd><dt>Детская кроватка</dt><dd>Детские кроватки и стульчики предоставляются (правила отеля, Островок: 500 ₽ с номера за ночь); на фото Островка кроватка стоит вплотную к двуспальной кровати. Заказывать заранее: +7 (812) 702-27-27 (не проверено, подтверждена ли кроватка на конкретный номер). Дети до 6 лет — проживание бесплатно без отдельного места (питание по тарифу родителей), не более 1 ребёнка на номер; с 6 до 14 лет — по прейскуранту.</dd><dt>Парковка</dt><dd>Бесплатная охраняемая парковка (входит в стоимость по сайту; есть крытая многоуровневая и на улице, при наличии мест; отель за сохранность авто не отвечает); зарядка электромобилей.</dd><dt>Детям</dt><dd>Детский клуб «Гелиосик» (0–10 лет, 10:00–19:00; малыши до 4 лет только с родителями; 250 ₽/час, 550 ₽ за день; бесплатно, пока родители в ресторане «Я и Ты» или СПА), детская площадка, игровая Game-зона, лазертаг, мастер-классы (от 500 ₽), аниматоры в каникулы; на осенние каникулы 23.10–04.11.2026 акция «СПА для детей 6–14 лет бесплатно» (условия не проверял); верёвочный парк работает с мая по ноябрь (режим в конце октября не проверен). Отзыв 2023 жалуется на отсутствие бесплатной детской комнаты/площадки, отзыв августа 2026 хвалит площадку — картина неоднозначная.</dd><dt>Чем заняться</dt><dd>Бассейн: собственного плавательного бассейна в отеле нет — крытый бассейн в соседнем санатории «Северная Ривьера» через шоссе (500 м), 10:00–20:15 по сеансам, взрослый 650 ₽ / ребёнок до 14 лет 550 ₽ за час, гостям Гелиоса скидка 10%, запись +7 (812) 433-55-94. В отеле СПА-комплекс (платные процедуры, СПА-скидка до 15% при онлайн-заказе): банный комплекс с мини-бассейнами, баня с джакузи, хаммам, соляная пещера, кедровая бочка, флоатинг, детское СПА; бесплатный тренажёрный зал; бильярд, настольный теннис, прокат; Финский залив в ≈500 м (прогулки по берегу; до городского пляжа Зеленогорска 1,9 км), парк, остановка автобуса у отеля. Справка про «Аквамарин» (Приморское шоссе, 593-Н, рядом): Островок 7,5 (508 отзывов), на 25–27.10 для нашего состава «нет номеров»; в сводке не рассматривал.</dd><dt>Где проверяли</dt><dd>https://www.gelios-hotel.ru/booking (виджет Uhotels, смотрел с датами 25–27.10.2026) ; https://ostrovok.ru/hotel/russia/zelenogorsk/mid6775271/_0x2d176/?dates=25.10.2026-27.10.2026&amp;guests=3and0.9</dd></dl></details>
+          <div class="extra">
+            <span>Санкт-Петербург, г. Зеленогорск, Приморское шоссе, 593 лит. Б</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/?pt=29.66381,60.195072&amp;z=14&amp;l=map" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://www.gelios-hotel.ru/" target="_blank" rel="noopener">Сайт ↗</a></span>
+          </div>
+        </article>
+        <article class="card" data-region="north" data-avail="1">
+          <div class="gal" data-place="dom-tvorchestva-komarovo" data-name="Дом творчества писателей"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk a">5</span>дом отдыха</div><h3>Дом творчества писателей</h3><div class="addr">Комарово, Курортный район · ≈50 мин – 1 ч от центра (≈40 км до Финляндского вокзала) —…</div></div>
+            <div class="price"><b>15 029 ₽</b><small>за 2 ночи</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill good">Свободно на 25–27 октября</span>
+            <span class="pill good">Парковка: Парковка есть («парковка рядом», по Островку;</span>
+          </div>
+          <p class="room">Четырёхместный номер Standard с балконом, вид на внутренний двор: двуспальная + односпальная кровать (по описанию Островка), 4-е место — только допкровать/раскладушка, и Островок…</p>
+          <div class="ratings"><h4>Отзывы на площадках</h4><div class="rt-row"><div class="rt none"><span class="rt-src">Островок</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div><div class="rt warn"><span class="rt-src">Яндекс</span><b class="rt-val">4,3<small>/5</small></b><span class="rt-bar"><i style="width:86%"></i></span><span class="rt-n"></span></div><div class="rt none"><span class="rt-src">2ГИС</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div></div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Уникальное историческое место (жили Ахматова, Стругацкие и др.), тихо, сад, залив и эко-тропа рядом (Яндекс Карты)</li><li>Очень низкая цена: 15 029 ₽ за 2 ночи на 5 человек или 24 358 ₽ за два номера (Островок)</li><li>Домашняя столовая и вкусные завтраки по отзывам (2023–сент. 2026), хорошая баня по отзывам, новое руководство «многое изменило к лучшему» (отзыв 24 сентября)</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Здание 1956 года, в отзывах «убитые» санузлы, старая мебель, грязь, нет интернета, вода долго греется (июнь–авг. 2025), номера не соответствуют фото на агрегаторах</li><li>Проблемы с бронированием: оплата переводом на личные карты без договора/чеков, смена времени заселения, отказ в брони при приезде (отзывы 2025). С Островка бронь безопаснее, но инвентарь на Островке новый, без отзывов</li><li>Риск по отоплению/сетям: по «Деловому Петербургу» (20.05.2026) газ и отопление не были подключены, электроснабжение — на завершающей стадии, идёт ремонт; в конце октября может быть холодно — обязательно позвонить</li></ul></div>
+          </div>
+          <details class="more"><summary>Подробнее: цена, питание, кроватка, детям</summary><dl><dt>Размещение</dt><dd>Четырёхместный номер Standard с балконом, вид на внутренний двор: двуспальная + односпальная кровать (по описанию Островка), 4-е место — только допкровать/раскладушка, и Островок пишет «допкровать не включена». Economy — двухместный с видом на сад, общая ванная комната (по этажу). По 101hotels: всего ≈12 номеров, есть одноместные (8 м², санузел на этаже) и семейный трёхместный и более. Здание 1956 года, в отзывах — советская обстановка, номера простые, во многих санузел на этаже. 5 человек в одном номере — впритык; 2 номера Standard получаются тоже недорого (24 358 ₽).</dd><dt>Цена</dt><dd>Островок, 2 ночи, без питания, оплата при бронировании/в отеле, бесплатная отмена до 23.10.2026 14:00 МСК (11:00 UTC): вариант А — один Четырёхместный номер Standard с балконом (двуспальная + односпальная кровать, «дополнительная кровать не включена») — 15 029 ₽ на 3 взр. + 2 детей; Economy с общей ванной — 14 469 ₽ (доп. кровати включены, питание не включено); вариант Б — два Standard (2 взр.+реб. 9 лет и 1 взр.+малыш) — 24 358 ₽. Для 5 человек реально брать Standard (15 029 ₽), но четвёртого человека/кровать для 9-летнего нужно подтвердить по телефону — в номере по описанию 3 спальных места.</dd><dt>Питание</dt><dd>Питание в стоимость Островка не входит (тариф «без питания»). Отзывы: на территории есть столовая («заведующая столовой Антонина», «питание как дома, как в детстве», запеканка, завтраки; сент. 2026 — «питание хочется отметить особо»), а также кафе «Суббота» (дачный клуб в здании: завтраки, закуски, вино, горячего всего 2 блюда; открылся летом 2026). Цен на питание и график работы столовой в конце октября не нашёл — не проверено, уточнять по телефону.</dd><dt>Детская кроватка</dt><dd>Не проверено. Островок: «детская люлька — количество и стоимость нужно уточнять»; в тарифах для 0-летнего «детская кровать не включена». Заказывать/уточнять заранее по +7 (921) 886-58-99, иначе брать свою (складную).</dd><dt>Парковка</dt><dd>Парковка есть («парковка рядом», по Островку; на территории большой двор/сад). Платность не указана — не проверено.</dd><dt>Детям</dt><dd>Островок: «подходит для детей», «семейные номера». Игровой комнаты, площадки или аниматоров не нашёл — не проверено. Есть сад, дорожки, стадион, беседки (отзыв Яндекс). Для детей в основном — прогулки по Комарово, залив и эко-тропа. Зданию свойственны старые лестницы/окна, санузлы по этажу.</dd><dt>Чем заняться</dt><dd>Прогулки: Финский залив ≈900 м, эко-тропа, комаровский сад и «Беседка Ахматовой», Комаровский берег, могила Ахматовой, музей Келломяки-Комарово. В здании — библиотека, литературные вечера/экскурсии, кафе «Суббота» (винил-гостиная, чайные церемонии). Баня: по отзывам 2023–2024 «баня хорошая», в Яндекс Картах у места указана «сауна»; цены/график на конец октября и на гостей — не проверено. Лыжи/«Пухтолова гора» в 9 км — сезон не проверен.</dd><dt>Где проверяли</dt><dd>https://ostrovok.ru/hotel/russia/komarovo/mid14022691/dom_tvorchestva_pisateley_hotel_2/?dates=25.10.2026-27.10.2026&amp;guests=3and0.9 (Островок, API 16.10.2026)</dd></dl></details>
+          <div class="extra">
+            <span>Санкт-Петербург, п. Комарово, Кавалерийская ул., 4/4 (лит. И)</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/?pt=29.8096,60.1805&amp;z=14&amp;l=map" target="_blank" rel="noopener">На карте ↗</a></span>
+          </div>
+        </article>
+        <article class="card" data-region="north" data-avail="0">
+          <div class="gal" data-place="tsarstvo-korolevstvo-roshchino" data-name="Отель «Царство-Королевство»"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk b">6</span>загородный отель</div><h3>Отель «Царство-Королевство»</h3><div class="addr">Рощино, Выборгское направление · ≈1 ч 10 мин от центра Петербурга без пробок (≈55–60 км по…</div></div>
+            <div class="price"><b>42 846 ₽</b><small>за 2 ночи</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill warn">Наличие не проверено — звонить</span>
+            <span class="pill good">Парковка: Парковка есть (Островок: «парковка рядом с отелем»;</span>
+          </div>
+          <p class="room">Вариант 1 (на 4+малыш): «Боярский» — 4-местный коттедж, 2 комнаты, 2 двуспальные кровати: 3 взрослых + 9-летний ребёнок размещаются на 4 спальных местах, малыш — в детской…</p>
+          <div class="ratings"><h4>Отзывы на площадках</h4><div class="rt-row"><div class="rt warn"><span class="rt-src">Островок</span><b class="rt-val">8,6<small>/10</small></b><span class="rt-bar"><i style="width:86%"></i></span><span class="rt-n">128 оценок</span></div><div class="rt none"><span class="rt-src">Яндекс</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div><div class="rt good"><span class="rt-src">2ГИС</span><b class="rt-val">4,9<small>/5</small></b><span class="rt-bar"><i style="width:98%"></i></span><span class="rt-n"></span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div></div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Большая зелёная территория в сосновом лесу, коттеджи стоят не рядами, много места для прогулок с коляской (отзывы 2023–2025)</li><li>Сильная детская программа: анимация, клуб, площадки — «одно из лучших мест для отдыха с детьми» (отзыв июнь 2026)</li><li>Коттедж «Боярский»: чисто, тёплый пол, кухня со всем необходимым, своя сауна и мангал; быстрый и внимательный персонал (отзывы 2021–2024)</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Домики «уже не новые», Островок «Номер» 7,8 из 10 (отзыв июнь 2026)</li><li>Один ресторан; обеды (супы) не впечатлили, ужины хвалят (отзыв июнь 2026)</li><li>Бронируемость не подтверждена: карточка отеля на Островке показывает «нет номеров»; депозит 20 000 ₽ наличными; многие услуги спа платные</li></ul></div>
+          </div>
+          <details class="more"><summary>Подробнее: цена, питание, кроватка, детям</summary><dl><dt>Размещение</dt><dd>Вариант 1 (на 4+малыш): «Боярский» — 4-местный коттедж, 2 комнаты, 2 двуспальные кровати: 3 взрослых + 9-летний ребёнок размещаются на 4 спальных местах, малыш — в детской кроватке/люльке (Островок: «дополнительная кровать не включена»; доп. кровать 1 500 ₽ с гостя за ночь, люлька 500 ₽ с номера за ночь). Вариант 2: 6-местный «Графский» (87 м², 3 комнаты, по каталогу resorto.io) — цена 49 871 ₽ из вашей проверки мной НЕ перепроверена (в моих запросах виден только самый дешёвый тариф — Боярский). Есть и другие коттеджи (Княжеский 6 мест, Царский и др.), в этих датах не смотрел.</dd><dt>Цена</dt><dd>42 846 ₽ за 2 ночи — 4-местный коттедж «Боярский» (47 м², 2 спальни с 2 двуспальными кроватями, кухня-гостиная, своя сауна, терраса), БЕЗ питания, бесплатная отмена до 16:00 МСК 18.10.2026, дальше 100% штраф; в выдаче Островка «осталось 3». НО: на самой карточке отеля на Островке для этих дат «Нет доступных вариантов», а тарифный запрос по отелю возвращает пусто — то есть цена видна только в списке по Рощино, а бронируемость не подтверждена; перед решением позвонить в отель. Дополнительно: депозит 20 000 ₽ наличными за весь период (по условиям Островка).</dd><dt>Питание</dt><dd>В тарифе «Боярский» питания нет (питание для детей не включено). Завтрак — платная опция в ресторане «Шишкин кафе» (меню завтрака есть PDF у каталога resorto.io; цены не смотрел). В коттеджах полноценная кухня (плита, холодильник, посуда, у каждого дома мангальная зона; мясо для шашлыка в ресторане, уголь/мангал на ресепшн). Тарифов с полупансионом/полным пансионом на Островке не нашёл — не проверено; по сайту отеля не проверено (сайт не найден).</dd><dt>Детская кроватка</dt><dd>Детская люлька/кроватка: Островок — 500 ₽ с номера за ночь, «максимальное количество нужно уточнять»; в каталоге glamp-space указана «детская кровать». Заказывать заранее — по телефону (не проверено, что есть в наличии на даты).</dd><dt>Парковка</dt><dd>Парковка есть (Островок: «парковка рядом с отелем»; каталог glamp-space: бесплатная на территории). Бесплатность для коттеджей не подтверждена отелем — не проверено.</dd><dt>Детям</dt><dd>Подходит для детей: детский клуб с анимацией (отзыв июнь 2026: с утра до вечера игры, мастер-классы, вечером дискотеки), большая детская площадка, площадки для спортигр (шахматы, футбол, баскетбол, волейбол, петанк), верёвочный парк, горки для ватрушек зимой, игровая комната. Что из этого работает в конце октября — не проверено (часть отзывов летние).</dd><dt>Чем заняться</dt><dd>Лес и сосновый бор вокруг, экотропа, пруд, Рощинское озеро в ≈500 м, вечером костровая чаша у ресторана; банно-спа комплекс (платно: парные, хаммам, купели, соляная комната; в «Боярском» своя сауна), фитнес и тренажёрный зал, настольный теннис, прокат велосипедов; ресторан и кафе на территории. Бассейна (плавательного) нет.</dd><dt>Где проверяли</dt><dd>https://ostrovok.ru/hotel/russia/roshchino/mid8735131/tsarstvokorolevstvo_hotel/?dates=25.10.2026-27.10.2026&amp;guests=3and0.9</dd></dl></details>
+          <div class="extra">
+            <span>Рощино, ул. Первомайская, 2к9 (так на Островке; в других каталогах — д. 1)</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/?pt=29.615757,60.264378&amp;z=14&amp;l=map" target="_blank" rel="noopener">На карте ↗</a></span>
+          </div>
+        </article>
+        <article class="card" data-region="north" data-avail="0">
+          <div class="gal" data-place="skandinaviya-sestroretsk" data-name="Курортный отель Загородный клуб «Скандинавия» и СПА"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk b">7</span>загородный отель</div><h3>Курортный отель Загородный клуб «Скандинавия» и СПА</h3><div class="addr">Сестрорецк, Курортный район · ≈40–50 мин от центра без пробок (≈35 км;</div></div>
+            <div class="price"><b>8 000 ₽</b><small>за 2 ночи</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill bad">На 25–27 октября онлайн мест нет</span>
+            <span class="pill good">Парковка: Собственная охраняемая парковка на территории (по сайту…</span>
+          </div>
+          <p class="room">Единственные категории на 4 места — «Сюит Чайковский» (110 м², 2 спальни) и «Дачный семейный апартамент №7» (150 м², 2 спальни);</p>
+          <div class="ratings"><h4>Отзывы на площадках</h4><div class="rt-row"><div class="rt bad"><span class="rt-src">Островок</span><b class="rt-val">8,0<small>/10</small></b><span class="rt-bar"><i style="width:80%"></i></span><span class="rt-n">562 оценки</span></div><div class="rt good"><span class="rt-src">Яндекс</span><b class="rt-val">5,0<small>/5</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n"></span></div><div class="rt good"><span class="rt-src">2ГИС</span><b class="rt-val">4,8<small>/5</small></b><span class="rt-bar"><i style="width:96%"></i></span><span class="rt-n"></span></div><div class="rt warn"><span class="rt-src">Google</span><b class="rt-val">4,5<small>/5</small></b><span class="rt-bar"><i style="width:90%"></i></span><span class="rt-n">1 654 оценки</span></div></div></div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Первая береговая линия: залив в 20 м, красивая ухоженная территория, историческая архитектура дач (Островок 9,5 за расположение; 2ГИС)</li><li>Тёплый подогреваемый открытый бассейн и джакузи, банный комплекс (русская, хамам, финская, баня по-чёрному), вкусные разнообразные завтраки и ресторан (2ГИС, Островок: питание 10)</li><li>Приветливый персонал и «своя атмосфера» усадьбы; отметка «Лучшая гостиница 2026» в 2ГИС</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Номера часто «подуставшие»: Стандарт очень маленький, старый ковролин и фены, нет кондиционера в части номеров, плохая шумоизоляция (Островок: номер 7,8, цена/качество 7,5; 2ГИС)</li><li>Баня для проживающих по умолчанию до 18:00 (бассейн — до позднего вечера), хлорка/запах химии в джакузи и жалобы на чистоту бассейна, полотенца не успевают сохнуть (2ГИС, Островок)</li><li>Высокая цена за ночь относительно качества номерного фонда; к нашим датам бассейн закрыт на обслуживание до 25.10 включительно, а 2-ночное размещение на 5 человек онлайн недоступно</li></ul></div>
+          </div>
+          <details class="more"><summary>Подробнее: цена, питание, кроватка, детям</summary><dl><dt>Размещение</dt><dd>Единственные категории на 4 места — «Сюит Чайковский» (110 м², 2 спальни) и «Дачный семейный апартамент №7» (150 м², 2 спальни); на 25–27.10 оба недоступны. Остальные номера рассчитаны на 2 (Мансардный улучшенный — до 3), поэтому для 5 человек нужны 2 номера (например, Мансардный улучшенный для 2 взр. + дети и Стандарт/Улучшенный для 3-го взрослого). Также у отеля есть отдельные коттеджи «Белокаменский» (250 м², 3 спальни, своя сауна) и «Белоостровский» (464 м², 3 спальни, свой бассейн): они в календаре бронирования на наши даты не показаны, цену и наличие не проверял — «не проверено».</dd><dt>Цена</dt><dd>На 2 ночи 25–27.10 для 5 человек цены нет: на Островке номеров нет (оба листинга, в т.ч. kurortny_hotel_skandinaviya_i_spa_2, rates: null), а на сайте отеля бронирование этих дат «доступно с ограничениями» и при поиске 3 взр. + 2 детей (и одним, и двумя номерами) 2-ночный вариант не найден — предлагаются только отдельные ночи 25→26 и 26→27 (и 24→26, 26→28). Ориентиры по календарю сайта (цена за ночь при 1-местном размещении, без учёта детей): ночь 25.10 — Стандарт 8 000 ₽, Мансардный улучшенный 11 000 ₽, Дачные номера 22 800–25 300 ₽; ночь 26.10 — Стандарт 14 600 ₽, Улучшенный 20 100 ₽, Мансардный улучшенный 18 600 ₽, Двухуровневый улучшенный 25 600 ₽, дачные сюиты/апартаменты ≈32 000–33 000 ₽. Для 25→26 при раскладке «2 взр. + 2 детей» виджет показал Мансардный улучшенный (до 3 мест) с завтраком без предоплаты за ≈14 250 ₽ за ночь (по иконке гостей тарифа; тариф «без бассейна» из-за закрытия бассейна до 25.10). Итоговую стоимость на 2 ночи за 2 номера не получил. Чтобы забронировать 25–27, нужно звонить: +7 (812) 454-11-00, reception@skandinavia.ru. Курортный сбор 100 ₽/сутки с каждого взрослого (с 18 лет).</dd><dt>Питание</dt><dd>Завтрак шведский стол (ресторан «Ротонда») включён в найденные тарифы. Тарифов «полупансион/полный пансион» в выдаче не видел. Есть пакеты с питанием: «Уютная осень» (завтрак + обед или ужин в «Дача Брассери» + баня), «Осенний баланс» (завтрак + СПА-процедура), «Бархатный сезон» (обед или ужин + СПА-процедура) — по виджету на ночь 25→26 ≈13 800 / 15 700 / 18 500 ₽ (цена по иконке «1 гость», для семьи не пересчитывал). Рестораны: «Дача Брассери» (европейская кухня, детское меню, поздние завтраки 12:00–15:00, живая музыка пт и сб; закрыт 17.10 и 23.10 на мероприятия), гриль-бар «Скандинавия», доставка в номер. С 19 по 25.10 для проживающих скидка 10% на услуги ресторана и СПА-центра. Цены а-ля карт не смотрел — «не проверено».</dd><dt>Детская кроватка</dt><dd>На Островке указано: детская люлька 500 ₽ с номера за ночь (максимум нужно уточнять). На официальном сайте отеля про кроватки/манеж для малыша ничего не нашёл — «не проверено», нужно уточнить при брони (особенно для малыша 9 мес.).</dd><dt>Парковка</dt><dd>Собственная охраняемая парковка на территории (по сайту отеля); на Островке пометки о платности нет, т.е. вероятно бесплатно — не подтверждено. В отзыве за август 2026 жалоба: на парковке нет водостока, после дождя огромные лужи.</dd><dt>Детям</dt><dd>Детская комната в главном корпусе, детская площадка и игровая комната (по Островку); осенью на сайте анонсирована вечерняя анимация для детей (19:00–22:00: игры на улице, творческая мастерская, игротека; расписание на каникулы — отдельно); детское меню в «Дача Брассери»; прокат лыжного инвентаря и велосипедов. Детского бассейна нет; бассейн открытый с подогревом, в 2026 закрыт на ТО 19–25.10 включительно.</dd><dt>Чем заняться</dt><dd>Главный плюс — берег Финского залива в 20 м от отеля, прогулки по пляжу, Верхнему парку (≈450 м), Сестрорецкому курорту и дубовой роще; баня по-чёрному, русская баня, хамам, финская сауна, подогреваемый открытый бассейн и джакузи (по описанию — круглый год; но 19–25.10 бассейн закрыт, а 25.10 как раз день заезда — работу бассейна 26–27.10 уточнять). Для проживающих банный комплекс включён в стоимость и по умолчанию работает 9:00–18:00 (в дни ТО продлён до 00:00). Также СПА-центр, конные прогулки, экскурсии, прокат инвентаря, бадминтон, бильярд (по Островку).</dd><dt>Где проверяли</dt><dd>https://skandinavia.ru/booking/ (виджет TravelLine, проверял 25–27.10.2026, 3 взрослых + дети 9 и &lt;1 года, в т.ч. раскладка на 2 номера); Островок: https://ostrovok.ru/hotel/russia/sestroretsk/mid10000625/zagorodnyij_klub_skandinaviya_i_spa/?dates=25.10.2026-27.10.2026&amp;guests=3and0.9</dd></dl></details>
+          <div class="extra">
+            <span>Санкт-Петербург, Сестрорецк, ул. Парковая, д. 16, лит. А</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/?pt=29.949,60.1033&amp;z=14&amp;l=map" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://skandinavia.ru/" target="_blank" rel="noopener">Сайт ↗</a></span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Наличие и цены проверены 16.10.2026 на сайтах отелей и Островке, ничего не бронировалось. Фото — из галерей отелей и Островка, карта © Яндекс.</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Фото">
+  <div class="lb-top"><span><b id="lb-name"></b> · <span id="lb-n" class="num"></span></span><button type="button" id="lb-close" aria-label="Закрыть">×</button></div>
+  <div class="lb-stage"><img id="lb-img" alt=""><button type="button" class="lb-prev" id="lb-prev" aria-label="Предыдущее фото">‹</button><button type="button" class="lb-next" id="lb-next" aria-label="Следующее фото">›</button></div>
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script>
+(function(){
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  var PH = {"repinskaya-riviera": [{"f": "zagorod-photos/repinskaya-riviera/room-1.jpg", "c": "Спальня номера: двуспальная кровать с деревянной панелью в изголовье (категория номера в галерее не указана)", "k": "room"}, {"f": "zagorod-photos/repinskaya-riviera/room-2.jpg", "c": "Гостиная люкса: угловой диван, кофе-станция с чайником и бутылками воды", "k": "room"}, {"f": "zagorod-photos/repinskaya-riviera/exterior-1.jpg", "c": "Корпус отеля среди сосен на берегу Финского залива, рядом песчаный пляж (вид сверху, летнее фото)", "k": "exterior"}, {"f": "zagorod-photos/repinskaya-riviera/exterior-2.jpg", "c": "Дорожка в парке отеля среди высоких сосен (летнее фото)", "k": "exterior"}, {"f": "zagorod-photos/repinskaya-riviera/common-1.jpg", "c": "Открытый бассейн 25 м с шезлонгами на террасе рядом с корпусом", "k": "common"}, {"f": "zagorod-photos/repinskaya-riviera/common-2.jpg", "c": "Крытый бассейн МЕДИ СПА Репино с гидромассажем и джакузи", "k": "common"}], "azimut-repino": [{"f": "zagorod-photos/azimut-repino/exterior-1.jpg", "c": "Фасад четырёхэтажного отеля с балконами и террасами, газон с зоной отдыха на переднем плане", "k": "exterior"}, {"f": "zagorod-photos/azimut-repino/exterior-2.jpg", "c": "Детская площадка на территории: деревянный городок с горкой, лестницей и качелями на резиновом покрытии, сосны вокруг", "k": "exterior"}, {"f": "zagorod-photos/azimut-repino/room-1.jpg", "c": "Просторный номер: большая двуспальная кровать, диван, телевизор, окно во всю стену в сторону зелени (категория номера на Островке не указана)", "k": "room"}, {"f": "zagorod-photos/azimut-repino/room-2.jpg", "c": "Номер в классическом стиле: двуспальная кровать с резным изголовьем, письменный стол, балконная дверь с видом на сосны (категория не указана)", "k": "room"}, {"f": "zagorod-photos/azimut-repino/common-1.jpg", "c": "Крытый плавательный бассейн с дорожками, шезлонги и панорамные окна в лес", "k": "common"}, {"f": "zagorod-photos/azimut-repino/common-2.jpg", "c": "Ресторан: столики и диванчики у больших окон в хвойный лес", "k": "common"}, {"f": "zagorod-photos/azimut-repino/common-3.jpg", "c": "Детская игровая комната: игрушки, мини-столик, шатёр-вигвам, ковёр-дорога", "k": "common"}], "bolshoe-borkovo": [{"f": "zagorod-photos/bolshoe-borkovo/room-1.jpg", "c": "Номер Делюкс: кровать king size, деревянная отделка стен, проектор над кроватью", "k": "room"}, {"f": "zagorod-photos/bolshoe-borkovo/room-2.jpg", "c": "Номер с двумя односпальными кроватями, панорамное окно с выходом на террасу", "k": "room"}, {"f": "zagorod-photos/bolshoe-borkovo/exterior-1.jpg", "c": "Деревянный корпус с номерами на склоне среди сосен, вечер (летнее фото)", "k": "exterior"}, {"f": "zagorod-photos/bolshoe-borkovo/exterior-2.jpg", "c": "Открытый бассейн банного комплекса и корпус со стеклянными стенами в сосновом лесу", "k": "exterior"}, {"f": "zagorod-photos/bolshoe-borkovo/common-1.jpg", "c": "Крытый бассейн СПА-комплекса «Орешки» с шишкообразными светильниками и зоной отдыха", "k": "common"}, {"f": "zagorod-photos/bolshoe-borkovo/common-2.jpg", "c": "Ресторан «Ягодки»: накрытый стол у панорамного окна, телескоп на террасе", "k": "common"}], "gelios-zelenogorsk": [{"f": "zagorod-photos/gelios-zelenogorsk/exterior-1.jpg", "c": "Многоэтажный корпус отеля среди деревьев, летнее фото", "k": "exterior"}, {"f": "zagorod-photos/gelios-zelenogorsk/room-1.jpg", "c": "«Комфорт семейный (Джуниор сюит)»: комната с двуспальной кроватью и кухонной зоной со столом", "k": "room"}, {"f": "zagorod-photos/gelios-zelenogorsk/room-2.jpg", "c": "«Комфорт семейный (Джуниор сюит)»: вторая комната с двумя односпальными кроватями и рабочим столом", "k": "room"}, {"f": "zagorod-photos/gelios-zelenogorsk/room-3.jpg", "c": "Номер отеля с детской кроваткой, приставленной к двуспальной кровати (категория номера на фото Островка не указана)", "k": "room"}, {"f": "zagorod-photos/gelios-zelenogorsk/common-1.jpg", "c": "Небольшой бассейн с каменной отделкой в банном комплексе (подпись на источнике отсутствует; размер небольшой)", "k": "common"}, {"f": "zagorod-photos/gelios-zelenogorsk/common-2.jpg", "c": "Соляная пещера в СПА-комплексе: кресла и подсветка", "k": "common"}], "dom-tvorchestva-komarovo": [{"f": "zagorod-photos/dom-tvorchestva-komarovo/room-1.jpg", "c": "Номер с односпальной кроватью, светлая деревянная отделка, окно в сад (фото с Островка — это одноместный/эконом-формат, не Standard на 4)", "k": "room"}, {"f": "zagorod-photos/dom-tvorchestva-komarovo/room-2.jpg", "c": "Небольшой номер: односпальная кровать, тумбочка, радиатор, окно с видом на деревья", "k": "room"}, {"f": "zagorod-photos/dom-tvorchestva-komarovo/exterior-1.jpg", "c": "Главный вход старого корпуса: ступени, дверь, облупленная краска и сад осенью", "k": "exterior"}, {"f": "zagorod-photos/dom-tvorchestva-komarovo/exterior-2.jpg", "c": "Жёлтый двухэтажный корпус с газоном среди сосен", "k": "exterior"}, {"f": "zagorod-photos/dom-tvorchestva-komarovo/common-1.jpg", "c": "Библиотека-гостиная: кресла, книжные шкафы, красные шторы, старая люстра", "k": "common"}, {"f": "zagorod-photos/dom-tvorchestva-komarovo/common-2.jpg", "c": "Коридор с новой отделкой деревом и светлыми дверями номеров", "k": "common"}], "tsarstvo-korolevstvo-roshchino": [{"f": "zagorod-photos/tsarstvo-korolevstvo-roshchino/room-1.jpg", "c": "Спальня с двуспальной кроватью в бревенчатом коттедже (какой именно — источник не указывает)", "k": "room"}, {"f": "zagorod-photos/tsarstvo-korolevstvo-roshchino/exterior-1.jpg", "c": "Одноэтажный тёмный деревянный коттедж с верандой среди сосен (летнее фото; тип коттеджа не указан)", "k": "exterior"}, {"f": "zagorod-photos/tsarstvo-korolevstvo-roshchino/common-1.jpg", "c": "Летняя терраса ресторана/кафе с зонтами и цветами, перед ней лужайка и качели-кокон (летнее фото)", "k": "common"}, {"f": "zagorod-photos/tsarstvo-korolevstvo-roshchino/common-2.jpg", "c": "Зал ресторана с двусторонним камином и деревянными балками", "k": "common"}, {"f": "zagorod-photos/tsarstvo-korolevstvo-roshchino/common-3.jpg", "c": "Сауна со стеклянной стеной в банно-спа зоне", "k": "common"}, {"f": "zagorod-photos/tsarstvo-korolevstvo-roshchino/common-4.jpg", "c": "Детская игровая площадка с деревянными башенками и мостиками (летнее фото)", "k": "common"}], "skandinaviya-sestroretsk": [{"f": "zagorod-photos/skandinaviya-sestroretsk/exterior-1.jpg", "c": "Главное деревянное здание дачи с островерхими башенками, белыми окнами и стеклянной верандой ресторана, газон и берёза", "k": "exterior"}, {"f": "zagorod-photos/skandinaviya-sestroretsk/exterior-2.jpg", "c": "Открытый подогреваемый бассейн с деревянной террасой, джакузи на переднем плане и бревенчатая баня с зелёной крышей среди сосен (фото из галереи, сделано в тёплую осень)", "k": "exterior"}, {"f": "zagorod-photos/skandinaviya-sestroretsk/room-1.jpg", "c": "Просторный номер с высокими окнами, большой кроватью, антикварным столом, креслами и диваном (категория номера не указана)", "k": "room"}, {"f": "zagorod-photos/skandinaviya-sestroretsk/room-2.jpg", "c": "Спальня под скошенным мансардным потолком: двуспальная кровать с деревянным изголовьем, светлые обои в цветочек (категория не указана)", "k": "room"}, {"f": "zagorod-photos/skandinaviya-sestroretsk/room-3.jpg", "c": "Мансардные апартаменты: кухонный блок с плитой и микроволновкой, обеденный стол на 6 стульев и телевизор (категория не указана)", "k": "room"}, {"f": "zagorod-photos/skandinaviya-sestroretsk/common-1.jpg", "c": "Ресторан: длинный стол и полосатый диван, деревянные стулья, каменные колонны и много зелени", "k": "common"}, {"f": "zagorod-photos/skandinaviya-sestroretsk/common-2.jpg", "c": "Финская сауна: деревянная парная с полками и электрокаменкой", "k": "common"}]};
+  var KIND = {room:"Номер",exterior:"Снаружи",lobby:"Лобби",courtyard:"Территория",common:"Общие зоны",other:"Ещё"};
+  function galHTML(list, i){
+    var x = list[i];
+    return '<button type="button" class="gal-main" aria-label="Открыть фото на весь экран"><img src="' + esc(x.f) + '" alt="' + esc(x.c) + '"' + (i ? '' : ' fetchpriority="high"') + '>' +
+      '<span class="gal-count">' + (i+1) + ' / ' + list.length + '</span>' +
+      '<span class="gal-cap"><b>' + KIND[x.k] + '</b>' + esc(x.c) + '</span></button>' +
+      '<div class="gal-strip">' + list.map(function(y, j){
+        return '<button type="button" data-i="' + j + '" aria-label="' + esc(y.c) + '"' + (j === i ? ' aria-current="true"' : '') + '><img src="' + esc(y.f) + '" alt="" loading="lazy"></button>';
+      }).join("") + '</div>';
+  }
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap"), lbN = document.getElementById("lb-n"), lbName = document.getElementById("lb-name");
+  var cur = null, lastFocus = null;
+  function lbShow(){
+    var x = cur.list[cur.i];
+    lbImg.src = x.f; lbImg.alt = x.c; lbCap.textContent = KIND[x.k] + ". " + x.c; lbN.textContent = (cur.i+1) + " / " + cur.list.length; lbName.textContent = cur.name;
+  }
+  function lbOpen(name, list, i){ cur = {name:name, list:list, i:i}; lastFocus = document.activeElement; lbShow(); lb.hidden = false; document.body.style.overflow = "hidden"; document.getElementById("lb-close").focus(); }
+  function lbClose(){ lb.hidden = true; document.body.style.overflow = ""; if (lastFocus) lastFocus.focus(); }
+  function lbStep(d){ cur.i = (cur.i + d + cur.list.length) % cur.list.length; lbShow(); }
+  document.getElementById("lb-close").addEventListener("click", lbClose);
+  document.getElementById("lb-prev").addEventListener("click", function(){ lbStep(-1); });
+  document.getElementById("lb-next").addEventListener("click", function(){ lbStep(1); });
+  lb.addEventListener("click", function(e){ if (e.target === lb || e.target.classList.contains("lb-stage")) lbClose(); });
+  document.addEventListener("keydown", function(e){
+    if (lb.hidden) return;
+    if (e.key === "Escape") lbClose(); else if (e.key === "ArrowLeft") lbStep(-1); else if (e.key === "ArrowRight") lbStep(1);
+  });
+  var tx = null;
+  lb.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener("touchend", function(e){ if (tx == null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) lbStep(dx < 0 ? 1 : -1); tx = null; });
+  document.querySelectorAll(".gal").forEach(function(g){
+    var list = PH[g.dataset.place]; if (!list) return;
+    var i = 0;
+    function draw(){ g.innerHTML = galHTML(list, i); }
+    g.addEventListener("click", function(e){
+      var t = e.target.closest("button"); if (!t) return;
+      if (t.classList.contains("gal-main")) lbOpen(g.dataset.name, list, i);
+      else if (t.dataset.i) { i = +t.dataset.i; draw(); var b = g.querySelector('[data-i="' + i + '"]'); if (b) b.focus(); }
+    });
+    draw();
+  });
+
+  var region="all", free=false, fr=document.getElementById("f-free");
+  function apply(){
+    document.querySelectorAll(".card").forEach(function(c){ c.hidden = (region!=="all" && c.dataset.region!==region) || (free && c.dataset.avail!=="1"); });
+    document.querySelectorAll("[data-region]").forEach(function(b){ if (b.tagName==="BUTTON") b.setAttribute("aria-pressed", String(b.dataset.region===region)); });
+  }
+  document.querySelectorAll("button[data-region]").forEach(function(b){ b.addEventListener("click", function(){ region=b.dataset.region; apply(); }); });
+  fr.addEventListener("change", function(){ free=fr.checked; apply(); });
+  apply();
+})();
+</script>
+
+</body>
+</html>
