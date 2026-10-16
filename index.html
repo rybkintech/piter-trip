@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noimageindex, noarchive">
+<meta name="googlebot" content="noindex, nofollow, noimageindex">
+<meta name="yandex" content="noindex, nofollow">
+<meta name="description" content="Где жить семье из пяти на машине в Петербурге 23–27 октября: варианты, отзывы, парковка, завтраки рядом.">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Питер: где жить</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;700&display=swap">
+<style>
+/* Layout: одна колонка до 1080px. Тёмная «невская» шапка с разведённым мостом, дальше шорт-лист, развилка, таблица всех мест, чек-лист перед бронью */
+:root{
+  --bg:#EDF0F2; --surface:#FFFFFF; --ink:#18212C; --muted:#586473; --line:#D3DAE1;
+  --neva:#1F3550; --on-neva:#F2EADC; --on-neva-muted:#B4C0CD;
+  --ochre:#D69A2D; --ochre-ink:#8A5A0C; --ochre-soft:#F6E7C8;
+  --good:#2B7549; --good-soft:#DCEEE2; --warn:#8F5E10; --warn-soft:#F6E9CC; --bad:#A93B32; --bad-soft:#F6DEDA;
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Golos Text",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F151C; --surface:#17202A; --ink:#E6EBF0; --muted:#9AA7B4; --line:#283440;
+  --neva:#0A1622; --on-neva:#F2EADC; --on-neva-muted:#9FB0C2;
+  --ochre:#E2AA48; --ochre-ink:#EDBB62; --ochre-soft:#3A2E17;
+  --good:#6CC592; --good-soft:#173324; --warn:#E6B358; --warn-soft:#3A2D14; --bad:#EE8A80; --bad-soft:#3D1D1A;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0F151C; --surface:#17202A; --ink:#E6EBF0; --muted:#9AA7B4; --line:#283440;
+  --neva:#0A1622; --on-neva:#F2EADC; --on-neva-muted:#9FB0C2;
+  --ochre:#E2AA48; --ochre-ink:#EDBB62; --ochre-soft:#3A2E17;
+  --good:#6CC592; --good-soft:#173324; --warn:#E6B358; --warn-soft:#3A2D14; --bad:#EE8A80; --bad-soft:#3D1D1A;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--f-body);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ochre);outline-offset:2px;border-radius:4px}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.num{font-variant-numeric:tabular-nums}
+h1,h2,h3{text-wrap:balance;margin:0}
+h2{font:700 clamp(22px,3.2vw,30px)/1.15 var(--f-display);letter-spacing:-.01em}
+h3{font:600 19px/1.25 var(--f-body)}
+p{margin:0}
+.eyebrow{font:600 12px/1.2 var(--f-body);letter-spacing:.12em;text-transform:uppercase;color:var(--ochre-ink)}
+.lead{color:var(--muted);max-width:62ch}
+
+/* Hero */
+.hero{background:var(--neva);color:var(--on-neva)}
+.hero .wrap{padding-block:48px 40px;display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:end}
+.hero .eyebrow{color:var(--ochre)}
+.hero h1{font:700 clamp(30px,5.4vw,54px)/1.05 var(--f-display);letter-spacing:-.02em;margin-top:14px}
+.hero p.lead{color:var(--on-neva-muted);margin-top:18px;font-size:17px}
+.hero p.lead b{color:var(--on-neva);font-weight:600}
+.bridge{width:100%;max-width:300px;height:auto;justify-self:end}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.facts span{border:1px solid color-mix(in srgb,var(--on-neva) 28%,transparent);border-radius:999px;padding:6px 12px;font-size:14px;color:var(--on-neva)}
+
+/* Nav */
+nav.jump{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.jump .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px;scrollbar-width:none}
+nav.jump a{white-space:nowrap;text-decoration:none;font-size:14px;font-weight:500;color:var(--muted);padding:6px 10px;border-radius:8px}
+nav.jump a:hover{color:var(--ink);background:var(--surface)}
+
+section{padding-block:56px 8px}
+.sec-head{display:grid;gap:10px;margin-bottom:24px}
+
+/* Criteria */
+.criteria{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;list-style:none;padding:0;margin:0;counter-reset:c}
+.criteria li{counter-increment:c;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 14px 16px;display:grid;gap:6px;align-content:start}
+.criteria li::before{content:counter(c);font:700 22px/1 var(--f-display);color:var(--ochre)}
+.criteria b{font-weight:600}
+.criteria small{color:var(--muted);font-size:13.5px;line-height:1.4}
+.note{margin-top:14px;color:var(--muted);font-size:14.5px}
+
+/* Shortlist cards */
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:22px;display:grid;gap:16px;align-content:start}
+.card-top{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}
+.card-top .addr{color:var(--muted);font-size:14px;margin-top:2px}
+.price{text-align:right;white-space:nowrap}
+.price b{display:block;font:700 24px/1.1 var(--f-body);font-variant-numeric:tabular-nums}
+.price small{color:var(--muted);font-size:12.5px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.pill{display:inline-flex;align-items:center;gap:6px;border-radius:999px;padding:4px 10px;font-size:13px;font-weight:500;line-height:1.3;background:var(--bg);color:var(--ink)}
+.pill::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.pill.plain::before{display:none}
+.pill.good{background:var(--good-soft);color:var(--good)}
+.pill.warn{background:var(--warn-soft);color:var(--warn)}
+.pill.bad{background:var(--bad-soft);color:var(--bad)}
+.ratings{display:grid;gap:8px}
+.ratings h4{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.rt-row{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.rt{--q:var(--muted);--qs:var(--bg);background:var(--qs);border-radius:10px;padding:9px 10px 10px;display:grid;gap:3px;align-content:start;min-width:0}
+.rt.good{--q:var(--good);--qs:var(--good-soft)}
+.rt.warn{--q:var(--warn);--qs:var(--warn-soft)}
+.rt.bad{--q:var(--bad);--qs:var(--bad-soft)}
+.rt.none{opacity:.7}
+.rt-src{font-size:12px;font-weight:600;color:var(--ink)}
+.rt-val{font:700 22px/1.05 var(--f-body);color:var(--q);font-variant-numeric:tabular-nums}
+.rt-val small{font-size:12px;font-weight:500;color:var(--muted);margin-left:1px}
+.rt-bar{height:4px;border-radius:2px;background:color-mix(in srgb,var(--q) 18%,transparent);overflow:hidden}
+.rt-bar i{display:block;height:100%;background:var(--q);border-radius:2px}
+.rt-n{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+.rt-flag{font-size:11px;font-weight:600;color:var(--warn)}
+.rt.few .rt-val{opacity:.75}
+.rt-legend{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;color:var(--muted);margin-top:6px}
+.rt-legend span{display:inline-flex;align-items:center;gap:6px}
+.rt-legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14.5px}
+.pc ul{margin:6px 0 0;padding-left:18px;display:grid;gap:4px}
+.pc h4{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase}
+.pc .plus h4{color:var(--good)}
+.pc .minus h4{color:var(--bad)}
+.extra{border-top:1px dashed var(--line);padding-top:12px;font-size:14px;color:var(--muted);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 16px;align-items:center}
+.extra b{color:var(--ink);font-weight:600}
+.btn{display:inline-flex;align-items:center;gap:6px;text-decoration:none;font-weight:600;font-size:14px;color:var(--ochre-ink);border:1px solid var(--ochre);border-radius:999px;padding:6px 14px;white-space:nowrap}
+.btn:hover{background:var(--ochre-soft)}
+.tier{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 14px;margin:8px 0 14px}
+.tier+.cards{margin-bottom:28px}
+.tier h3{font:700 18px/1.2 var(--f-display)}
+.tier span{color:var(--muted);font-size:14.5px}
+.rank{display:inline-grid;place-items:center;min-width:28px;height:28px;padding:0 8px;border-radius:8px;font:700 13px/1 var(--f-display);background:var(--ochre);color:var(--neva)}
+.rank.two{background:var(--line);color:var(--ink)}
+
+/* Fork */
+.fork{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.path{border-radius:16px;padding:22px;border:1px solid var(--line);background:var(--surface);display:grid;gap:14px;align-content:start}
+.path .eyebrow{color:var(--muted)}
+.path h3{font:700 20px/1.2 var(--f-display)}
+.opt{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 12px;padding-top:12px;border-top:1px solid var(--line)}
+.opt b{font-weight:600}
+.opt .sum{font-weight:600;font-variant-numeric:tabular-nums;text-align:right}
+.opt small{grid-column:1/-1;color:var(--muted);font-size:14px}
+.next{margin-top:16px;background:var(--ochre-soft);border-radius:14px;padding:16px 18px;display:grid;gap:4px}
+.next b{color:var(--ochre-ink)}
+
+/* Table */
+.controls{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-bottom:14px}
+.seg{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--surface)}
+.seg button{all:unset;cursor:pointer;padding:7px 12px;font-size:14px;font-weight:500;color:var(--muted)}
+.seg button+button{border-left:1px solid var(--line)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.seg button:focus-visible{outline:2px solid var(--ochre);outline-offset:-2px}
+.toggle{display:inline-flex;gap:8px;align-items:center;font-size:14px;color:var(--muted);cursor:pointer;padding:6px 4px}
+.toggle input{accent-color:var(--ochre);width:16px;height:16px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:1120px;font-size:14.5px}
+th,td{text-align:left;padding:12px 14px;vertical-align:top;border-bottom:1px solid var(--line)}
+tr:last-child td{border-bottom:0}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--bg)}
+td.p{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+td .sub{color:var(--muted);font-size:13px}
+td.sub2{font-size:13.5px;min-width:120px}
+th.rc,td.rc{text-align:center;padding-left:6px;padding-right:6px}
+.tr{display:inline-grid;justify-items:center;gap:1px;min-width:58px;padding:5px 8px;border-radius:8px;background:var(--bg);font-variant-numeric:tabular-nums}
+.tr b{font-size:16px;font-weight:700}
+.tr small{font-size:11.5px;color:var(--muted);white-space:nowrap}
+.tr.good{background:var(--good-soft)}.tr.good b{color:var(--good)}
+.tr.warn{background:var(--warn-soft)}.tr.warn b{color:var(--warn)}
+.tr.bad{background:var(--bad-soft)}.tr.bad b{color:var(--bad)}
+.tr.few b{opacity:.7}
+.tr.none{color:var(--muted);background:transparent}
+td a{font-weight:600;text-decoration-color:var(--ochre);text-underline-offset:3px}
+.cat{display:inline-grid;place-items:center;width:26px;height:26px;border-radius:7px;font:700 13px/1 var(--f-display)}
+.cat.A{background:var(--good-soft);color:var(--good)}
+.cat.B{background:var(--warn-soft);color:var(--warn)}
+.cat.C{background:var(--bad-soft);color:var(--bad)}
+.empty{padding:22px;color:var(--muted)}
+.legend{margin-top:10px;font-size:13.5px;color:var(--muted)}
+
+/* B + rejected */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.list{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:8px 20px}
+.list h3{padding-block:14px 6px}
+.item{padding-block:12px;border-top:1px solid var(--line);display:grid;gap:3px;font-size:14.5px}
+.item:first-of-type{border-top:0}
+.item b{font-weight:600}
+.item span{color:var(--muted)}
+
+/* Before booking */
+.prep{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:16px}
+.box{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;display:grid;gap:12px;align-content:start}
+.box ul{margin:0;padding-left:18px;display:grid;gap:8px;font-size:14.5px}
+.checks{list-style:none;padding:0!important}
+.checks label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.checks input{accent-color:var(--good);width:18px;height:18px;margin-top:2px;flex:none}
+.checks input:checked+span{color:var(--muted);text-decoration:line-through}
+.bridge-note{background:var(--neva);color:var(--on-neva);border:0}
+.bridge-note p{color:var(--on-neva-muted);font-size:14.5px}
+.bridge-note h3{color:var(--on-neva)}
+
+/* Gallery */
+.gal{display:grid;gap:8px;min-width:0}
+.gal:empty{display:none}
+.gal-main{all:unset;position:relative;display:block;border-radius:12px;overflow:hidden;aspect-ratio:16/10;max-width:100%;background:var(--bg);cursor:zoom-in}
+.gal-main:focus-visible{outline:2px solid var(--ochre);outline-offset:2px}
+.gal-main img{width:100%;height:100%;object-fit:cover;display:block}
+.gal-cap{position:absolute;left:0;right:0;bottom:0;padding:28px 12px 10px;background:linear-gradient(transparent,rgba(6,10,16,.72));color:#F4EFE6;font-size:13px;line-height:1.35}
+.gal-cap b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;opacity:.8;font-weight:600}
+.gal-count{position:absolute;top:10px;right:10px;background:rgba(6,10,16,.6);color:#F4EFE6;font-size:12px;font-weight:600;border-radius:999px;padding:3px 9px;font-variant-numeric:tabular-nums}
+.gal-strip{display:flex;gap:6px;overflow-x:auto;padding:2px 2px 4px;scrollbar-width:thin}
+.gal-strip button{all:unset;flex:none;width:64px;height:46px;border-radius:7px;overflow:hidden;cursor:pointer;opacity:.6;transition:opacity .15s}
+.gal-strip button:hover{opacity:.9}
+.gal-strip button[aria-current="true"]{opacity:1;box-shadow:0 0 0 2px var(--ochre)}
+.gal-strip button:focus-visible{outline:2px solid var(--ochre);outline-offset:1px}
+.gal-strip img{width:100%;height:100%;object-fit:cover;display:block}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(6,10,16,.94);color:#F4EFE6;display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:10px;padding-top:max(12px,env(safe-area-inset-top,0px));padding-bottom:max(14px,env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.lb-top{display:flex;justify-content:space-between;align-items:center;gap:12px;font-size:14px}
+.lb-top b{font-weight:600}
+.lb-stage{position:relative;display:grid;place-items:center;min-height:0}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px}
+.lb button{all:unset;cursor:pointer;display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;background:rgba(244,239,230,.12);font-size:22px;line-height:1}
+.lb button:hover{background:rgba(244,239,230,.22)}
+.lb button:focus-visible{outline:2px solid var(--ochre)}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%)}
+.lb-prev{left:0}.lb-next{right:0}
+.lb-cap{text-align:center;font-size:14px;color:#D6CFC2;max-width:70ch;margin:0 auto}
+.kind{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ochre-ink);margin-bottom:3px}
+/* Breakfast mini in cards */
+.bf-mini{display:grid;gap:6px;font-size:14px}
+.bf-mini h4{margin:0;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ochre-ink)}
+.bf-mini ul{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.bf-mini li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:2px 10px;align-items:baseline}
+.bf-mini a{font-weight:600;text-decoration:none}
+.bf-mini a:hover{text-decoration:underline;text-decoration-color:var(--ochre)}
+.bf-mini .t{color:var(--muted);font-size:13px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bf-mini .star{color:var(--ochre-ink);font-size:12px;font-weight:600;margin-left:6px}
+.one{max-width:720px}
+/* Map */
+.mapbox{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:20px;align-items:start}
+.mapfig{margin:0;display:grid;gap:6px}
+.mapfig img{width:100%;height:auto;max-width:100%;aspect-ratio:650/450;border-radius:14px;border:1px solid var(--line);display:block}
+.mapfig figcaption{font-size:12px;color:var(--muted)}
+.maplist{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.maplist li{display:grid;grid-template-columns:auto minmax(0,1fr);gap:10px;align-items:start;font-size:14.5px}
+.maplist a{font-weight:600;text-decoration-color:var(--ochre);text-underline-offset:3px}
+.maplist small{display:block;color:var(--muted);font-size:13px}
+.mk{display:inline-grid;place-items:center;width:24px;height:24px;border-radius:50%;font-size:12px;font-weight:700;color:#fff;font-variant-numeric:tabular-nums}
+.mk.a{background:#D9902A}
+.mk.b{background:#2F6FB5}
+.kind .mk{width:18px;height:18px;font-size:10.5px;margin-right:6px;vertical-align:1px}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+@media (max-width:760px){.mapbox{grid-template-columns:1fr}}
+/* Breakfast */
+.seg.scroll{max-width:100%;overflow-x:auto;scrollbar-width:none}
+.seg.scroll button{white-space:nowrap}
+.cafes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.cafe{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:16px;display:grid;gap:8px;align-content:start;font-size:14px}
+.cafe.best{border-color:var(--ochre);box-shadow:inset 0 0 0 1px var(--ochre)}
+.cafe-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+.cafe-top b{font-size:16px;font-weight:600}
+.cafe .addr{color:var(--muted);font-size:13.5px}
+.cafe dl{margin:0;display:grid;grid-template-columns:auto minmax(0,1fr);gap:4px 10px}
+.cafe dt{color:var(--muted)}
+.cafe dd{margin:0;font-variant-numeric:tabular-nums}
+.cafe .why{color:var(--ink)}
+.cafe .kids{color:var(--muted);font-size:13px;line-height:1.45}
+.cafe .best-tag{font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--ochre-ink)}
+.walk{white-space:nowrap;font-weight:600;font-size:13px;border-radius:999px;padding:3px 9px;background:var(--bg)}
+.cafe a.map{font-weight:600;font-size:13.5px;color:var(--ochre-ink);text-decoration:none}
+.cafe a.map:hover{text-decoration:underline}
+@media (max-width:900px){.cafes{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.cafes{grid-template-columns:1fr}}
+footer{padding-block:48px 56px;color:var(--muted);font-size:13.5px}
+footer .wrap{display:grid;gap:8px;border-top:1px solid var(--line);padding-top:20px}
+
+@media (max-width:900px){
+  .criteria{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .criteria li:last-child{grid-column:1/-1}
+}
+@media (max-width:760px){
+  .hero .wrap{grid-template-columns:1fr;padding-block:36px 32px}
+  .bridge{justify-self:start;max-width:220px;order:-1}
+  .cards,.fork,.two,.prep{grid-template-columns:1fr}
+}
+@media (max-width:440px){
+  .pc{grid-template-columns:1fr}
+  .rt-row{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .card{padding:18px}
+}
+@media (prefers-reduced-motion:no-preference){
+  .leaf{transform-box:fill-box;animation:raise 1.6s cubic-bezier(.3,.7,.2,1) both}
+  .leaf.l{transform-origin:0% 100%}
+  .leaf.r{transform-origin:100% 100%}
+  @keyframes raise{from{transform:rotate(var(--from))}to{transform:rotate(0)}}
+}
+</style>
+</head>
+<body>
+
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Санкт-Петербург · 23–27 октября 2026</div>
+      <h1>Где жить впятером с машиной</h1>
+      <p class="lead">Проверили 14 мест на наши даты: цены, свободные номера и отзывы на Островке, Яндекс Картах, 2ГИС и Google. В шорт-листе <b>четыре варианта по 37–41 тыс. ₽ за 4 ночи</b>. Первыми идут два места со своей парковкой во дворе, за ними две квартиры по три комнаты.</p>
+      <div class="facts">
+        <span>4 ночи, пятница → вторник</span>
+        <span>3 взрослых, сын 9 лет, малыш 9 мес.</span>
+        <span>Нужна детская кроватка</span>
+        <span>На машине, без метро</span>
+        <span>Без завтраков, готовим сами</span>
+      </div>
+    </div>
+    <svg class="bridge" viewBox="0 0 300 170" role="img" aria-label="Разведённый мост над Невой">
+      <circle cx="248" cy="34" r="14" fill="none" stroke="var(--on-neva-muted)" stroke-width="1.5"/>
+      <line x1="0" y1="104" x2="78" y2="104" stroke="var(--on-neva)" stroke-width="4"/>
+      <line x1="222" y1="104" x2="300" y2="104" stroke="var(--on-neva)" stroke-width="4"/>
+      <rect x="66" y="104" width="16" height="36" fill="var(--on-neva)"/>
+      <rect x="218" y="104" width="16" height="36" fill="var(--on-neva)"/>
+      <line class="leaf l" style="--from:57deg" x1="80" y1="104" x2="122" y2="40" stroke="var(--ochre)" stroke-width="5" stroke-linecap="round"/>
+      <line class="leaf r" style="--from:-57deg" x1="220" y1="104" x2="178" y2="40" stroke="var(--ochre)" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="30" cy="92" r="3" fill="var(--ochre)"/><line x1="30" y1="95" x2="30" y2="104" stroke="var(--on-neva-muted)" stroke-width="1.5"/>
+      <circle cx="270" cy="92" r="3" fill="var(--ochre)"/><line x1="270" y1="95" x2="270" y2="104" stroke="var(--on-neva-muted)" stroke-width="1.5"/>
+      <g stroke="var(--on-neva-muted)" stroke-width="1.5" stroke-linecap="round" fill="none">
+        <path d="M10 146 h40 M96 146 h70 M190 146 h22 M246 146 h44"/>
+        <path d="M30 156 h26 M118 156 h40 M206 156 h50"/>
+        <path d="M70 165 h20 M150 165 h30"/>
+      </g>
+    </svg>
+  </div>
+</header>
+
+<nav class="jump" aria-label="Разделы">
+  <div class="wrap">
+    <a href="#map">Карта</a>
+    <a href="#shortlist">Шорт-лист</a>
+    <a href="#cat-b">Категория B</a>
+    <a href="#fork">Как выбрать</a>
+    <a href="#breakfast">Завтраки</a>
+    <a href="#all">Все 14 мест</a>
+    <a href="#others">Отсеянные</a>
+    <a href="#prep">Перед бронью</a>
+  </div>
+</nav>
+
+<main>
+  <section id="criteria">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Что важно, по порядку</div>
+        <h2>Сначала парковка, потом всё остальное</h2>
+      </div>
+      <ol class="criteria">
+        <li><b>Парковка у дома</b><small>Ездим только на машине, поэтому это главный критерий</small></li>
+        <li><b>Чистота</b><small>Смотрели оценку чистоты и жалобы в отзывах</small></li>
+        <li><b>Где спать</b><small>Двуспальная кровать и диван или две кровати, плюс кроватка для малыша</small></li>
+        <li><b>Красивое место</b><small>Исторический центр, вид, тихий двор</small></li>
+        <li><b>Кафе рядом</b><small>Чтобы завтракать недалеко от дома</small></li>
+      </ol>
+      <p class="note">Одна общая комната допустима, но две и больше — заметное преимущество.</p>
+    </div>
+  </section>
+
+  <section id="map">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Где это</div>
+        <h2>Все места на карте</h2>
+        <p class="lead">Оранжевые — шорт-лист, синие — категория B. Номер на карте совпадает с номером на карточке; по названию открывается Яндекс Карты.</p>
+      </div>
+      <div class="mapbox">
+        <figure class="mapfig"><img src="map/center.png" width="650" height="450" alt="Схема центра Петербурга с отмеченными вариантами жилья"><figcaption>Карта © Яндекс</figcaption></figure>
+        <ol class="maplist">
+          <li><span class="mk a">1</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%9D%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%20107%D0%92" target="_blank" rel="noopener">Terraplace</a><small>Невский проспект, 107В</small></span></li>
+          <li><span class="mk a">2</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%93%D0%BE%D0%BD%D1%87%D0%B0%D1%80%D0%BD%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2026" target="_blank" rel="noopener">Бутик Отель Номера</a><small>Гончарная улица, 26</small></span></li>
+          <li><span class="mk a">3</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%2C%2022" target="_blank" rel="noopener">Tropicana</a><small>улица Восстания, 22</small></span></li>
+          <li><span class="mk a">4</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%90%D0%BF%D1%80%D0%B0%D0%BA%D1%81%D0%B8%D0%BD%20%D0%BF%D0%B5%D1%80%D0%B5%D1%83%D0%BB%D0%BE%D0%BA%2C%2020" target="_blank" rel="noopener">Апраксин 20</a><small>Апраксин переулок, 20</small></span></li>
+          <li><span class="mk b">5</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%9B%D0%B0%D1%84%D0%BE%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%206" target="_blank" rel="noopener">Таврический</a><small>Лафонская улица, 6</small></span></li>
+          <li><span class="mk b">6</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9F%D1%80%D0%BE%D1%81%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%2C%2083" target="_blank" rel="noopener">SVET</a><small>проспект Просвещения, 83 · за краем карты, ≈12 км к северу от Дворцовой</small></span></li>
+          <li><span class="mk b">7</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%93%D0%BE%D1%80%D0%BE%D1%85%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2047%D0%92" target="_blank" rel="noopener">izzziUP</a><small>Гороховая улица, 47В</small></span></li>
+          <li><span class="mk b">8</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%92%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4%D0%B0%20%D0%92%D0%B8%D1%88%D0%BD%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%2C%201%D0%90" target="_blank" rel="noopener">Miris</a><small>улица Всеволода Вишневского, 1А · за краем карты, Петроградка, ≈3 км к северу</small></span></li>
+          <li><span class="mk b">9</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B5%D0%BA%D0%B8%20%D0%A4%D0%BE%D0%BD%D1%82%D0%B0%D0%BD%D0%BA%D0%B8%2C%2051-53" target="_blank" rel="noopener">У моста Ломоносова</a><small>набережная реки Фонтанки, 51-53</small></span></li>
+          <li><span class="mk b">10</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0%20%D0%93%D1%80%D0%B8%D0%B1%D0%BE%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%2C%2022" target="_blank" rel="noopener">У Казанского</a><small>набережная канала Грибоедова, 22</small></span></li>
+          <li><span class="mk b">11</span><span><a href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B5%D0%BA%D0%B8%20%D0%9C%D0%BE%D0%B9%D0%BA%D0%B8%2C%2018" target="_blank" rel="noopener">У Дворцовой</a><small>набережная реки Мойки, 18</small></span></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section id="shortlist">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Категория A</div>
+        <h2>Шорт-лист из четырёх мест</h2>
+        <p class="lead">Цена на 4 ночи за всех. Ниже каждой карточки — известные доплаты: парковка, кроватка, депозит. Фото открываются на весь экран.</p>
+        <div class="rt-legend"><span><i style="background:var(--good)"></i>Отлично: от 9 из 10 или от 4,7 из 5</span><span><i style="background:var(--warn)"></i>Нормально: 8,5–9 или 4,3–4,7</span><span><i style="background:var(--bad)"></i>Слабо: ниже</span><span>Полоска — оценка по шкале площадки</span></div>
+      </div>
+      <div class="tier"><span class="rank">1</span><h3>Своя парковка во дворе</h3><span>Главный критерий закрыт, машина под окнами</span></div>
+      <div class="cards">
+
+        <article class="card">
+          <div class="gal" data-place="terraplace" data-name="Terraplace"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk a">1</span>Бутик-отель</div><h3>Terraplace</h3><div class="addr">Невский 107В · у площади Восстания</div></div>
+            <div class="price"><b>40 018 ₽</b><small>≈10 000 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill good">Парковка во дворе, по запросу</span>
+            <span class="pill warn">1 комната, 25 м²</span>
+            <span class="pill good">Чистота 9,6</span>
+            <span class="pill warn">Кроватка есть, цену уточнить</span>
+            <span class="pill plain">Кухня</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt good"><span class="rt-src">Островок</span><b class="rt-val">9,4<small>/10</small></b><span class="rt-bar"><i style="width:94%"></i></span><span class="rt-n">61 оценка</span></div><div class="rt good"><span class="rt-src">Яндекс</span><b class="rt-val">5,0<small>/5</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n">244 оценки</span></div><div class="rt good"><span class="rt-src">2ГИС</span><b class="rt-val">4,9<small>/5</small></b><span class="rt-bar"><i style="width:98%"></i></span><span class="rt-n">55 оценок</span></div><div class="rt good few"><span class="rt-src">Google</span><b class="rt-val">5,0<small>/5</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n">6 оценок</span><span class="rt-flag">мало отзывов</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Новый отель, очень чисто</li><li>Окна в тихий двор</li><li>Своя кухня</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Все пятеро в одной комнате</li><li>Слышно соседей между номерами</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="terraplace"></div>
+          <div class="extra">
+            <span>С парковкой: <b class="num">≈46 000 ₽</b> (1 500 ₽/ночь) + кроватка</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%9D%D0%B5%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%2C%20107%D0%92" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://ostrovok.ru/hotel/russia/st._petersburg/mid10679090/terraplace_by_mix_hotels_hotel/?dates=23.10.2026-27.10.2026&amp;guests=3and0.9" target="_blank" rel="noopener">На Островке ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="gal" data-place="nomera" data-name="Бутик Отель Номера"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk a">2</span>Апартаменты в отеле</div><h3>Бутик Отель Номера</h3><div class="addr">Гончарная 26 · у Московского вокзала</div></div>
+            <div class="price"><b>41 042 ₽</b><small>≈10 300 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill good">Своя охраняемая парковка</span>
+            <span class="pill good">2 спальни, 39 м²</span>
+            <span class="pill bad">Чистота 7,5</span>
+            <span class="pill good">Кроватка 500 ₽/ночь</span>
+            <span class="pill plain">Кухня</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt warn"><span class="rt-src">Островок</span><b class="rt-val">8,9<small>/10</small></b><span class="rt-bar"><i style="width:89%"></i></span><span class="rt-n">1 606 оценок</span></div><div class="rt good"><span class="rt-src">Яндекс</span><b class="rt-val">4,9<small>/5</small></b><span class="rt-bar"><i style="width:98%"></i></span><span class="rt-n">3 738 оценок</span></div><div class="rt warn"><span class="rt-src">2ГИС</span><b class="rt-val">4,5<small>/5</small></b><span class="rt-bar"><i style="width:90%"></i></span><span class="rt-n">2 880 оценок</span></div><div class="rt bad"><span class="rt-src">Google</span><b class="rt-val">4,2<small>/5</small></b><span class="rt-bar"><i style="width:84%"></i></span><span class="rt-n">272 оценки</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Две спальни и своя парковка — редкость в центре</li><li>Хвалят раскладной диван для ребёнка</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Жалобы на бельё и пыль</li><li>Нет лифта</li><li>Шумная улица — просить номер во двор</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="nomera"></div>
+          <div class="extra">
+            <span>С парковкой и кроваткой: <b class="num">≈45 000 ₽</b></span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%93%D0%BE%D0%BD%D1%87%D0%B0%D1%80%D0%BD%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2026" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://ostrovok.ru/hotel/russia/st._petersburg/mid9204517/renome_hotel/?dates=23.10.2026-27.10.2026&amp;guests=3and0.9" target="_blank" rel="noopener">На Островке ↗</a></span>
+          </div>
+        </article>
+      </div>
+      <div class="tier"><span class="rank two">2</span><h3>Три комнаты, парковку искать рядом</h3><span>Просторнее с малышом, но машина на улице или в паркинге</span></div>
+      <div class="cards">
+
+        <article class="card">
+          <div class="gal" data-place="tropicana" data-name="LetYourFlat Tropicana"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk a">3</span>Апартаменты</div><h3>LetYourFlat Tropicana</h3><div class="addr">ул. Восстания 22 · квартира</div></div>
+            <div class="price"><b>39 035 ₽</b><small>≈9 800 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill warn">Парковка городская, платная</span>
+            <span class="pill good">3 спальни, 90 м²</span>
+            <span class="pill good">Чистота 10</span>
+            <span class="pill warn">Кроватка, возможно бесплатно</span>
+            <span class="pill plain">2 санузла</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt good few"><span class="rt-src">Островок</span><b class="rt-val">9,9<small>/10</small></b><span class="rt-bar"><i style="width:99%"></i></span><span class="rt-n">5 оценок</span><span class="rt-flag">мало отзывов</span></div><div class="rt good"><span class="rt-src">Яндекс</span><b class="rt-val">5,0<small>/5</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n">426 оценок</span><span class="rt-flag">оценка оператора</span></div><div class="rt bad few"><span class="rt-src">2ГИС</span><b class="rt-val">3,4<small>/5</small></b><span class="rt-bar"><i style="width:68%"></i></span><span class="rt-n">12 оценок</span><span class="rt-flag">мало отзывов · оценка оператора</span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Отдельная спальня для тёщи и детей</li><li>Посудомойка и стиралка</li><li>Два санузла на пятерых</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Всего 5 отзывов о квартире</li><li>На 2ГИС спор о залоге: удержали 43 тыс. за лопнувший смеситель</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="tropicana"></div>
+          <div class="extra">
+            <span>Депозит <b class="num">15 000 ₽</b> · детям до 4 лет кроватку дают бесплатно «при возможности»</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%92%D0%BE%D1%81%D1%81%D1%82%D0%B0%D0%BD%D0%B8%D1%8F%2C%2022" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://ostrovok.ru/hotel/russia/st._petersburg/mid9994752/letyourflat_tropicana_3_bedrooms/?dates=23.10.2026-27.10.2026&amp;guests=3and0.9" target="_blank" rel="noopener">На Островке ↗</a></span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="gal" data-place="apraksin" data-name="Апраксин 20"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk a">4</span>Апартаменты</div><h3>Апраксин 20</h3><div class="addr">Апраксин пер. 20 · DereMRents</div></div>
+            <div class="price"><b>37 760 ₽</b><small>≈9 400 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill warn">Платная парковка рядом</span>
+            <span class="pill good">3 комнаты, 110 м²</span>
+            <span class="pill good">Чистота 9,8</span>
+            <span class="pill good">Кроватка 2 000 ₽/ночь</span>
+            <span class="pill plain">1 этаж, удобно с коляской</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt good"><span class="rt-src">Островок</span><b class="rt-val">9,5<small>/10</small></b><span class="rt-bar"><i style="width:95%"></i></span><span class="rt-n">39 оценок</span></div><div class="rt bad few"><span class="rt-src">Яндекс</span><b class="rt-val">4,0<small>/5</small></b><span class="rt-bar"><i style="width:80%"></i></span><span class="rt-n">5 оценок</span><span class="rt-flag">мало отзывов · оценка оператора</span></div><div class="rt none"><span class="rt-src">2ГИС</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Самая просторная за свои деньги</li><li>Первый этаж — без лестниц с коляской</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Старый дом</li><li>В отзывах грязь у входа</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="apraksin"></div>
+          <div class="extra">
+            <span>С кроваткой: <b class="num">45 760 ₽</b> (2 000 ₽/ночь) · депозит 10 000 ₽ наличными</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%90%D0%BF%D1%80%D0%B0%D0%BA%D1%81%D0%B8%D0%BD%20%D0%BF%D0%B5%D1%80%D0%B5%D1%83%D0%BB%D0%BE%D0%BA%2C%2020" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://ostrovok.ru/hotel/russia/st._petersburg/mid13128038/prostornye_na_apraksinom_20_apartments/?dates=23.10.2026-27.10.2026&amp;guests=3and0.9" target="_blank" rel="noopener">На Островке ↗</a></span>
+          </div>
+        </article>
+
+      </div>
+      <p class="note">* Рейтинг управляющей компании, а не конкретной квартиры.</p>
+    </div>
+  </section>
+
+  <section id="cat-b">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Категория B</div>
+        <h2>Ещё семь мест с оговорками</h2>
+        <p class="lead">Подходят, но у каждого есть заметный минус: теснота, далеко от центра, мало отзывов или негде поставить машину. Первыми идут места со своей или бесплатной парковкой.</p>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <div class="gal" data-place="tavrichesky" data-name="Таврический"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk b">5</span>Отель</div><h3>Таврический</h3><div class="addr">Лафонская 6 · у Таврического сада</div></div>
+            <div class="price"><b>52 200 ₽</b><small>≈13 000 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill good">Бесплатная охраняемая парковка</span>
+            <span class="pill warn">1 комната, 35 м²</span>
+            <span class="pill good">Кроватка 1 000 ₽/ночь</span>
+            <span class="pill plain">Двуспальная + доп. кровати</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt bad"><span class="rt-src">Островок</span><b class="rt-val">8,2<small>/10</small></b><span class="rt-bar"><i style="width:82%"></i></span><span class="rt-n">115 оценок</span></div><div class="rt bad few"><span class="rt-src">Яндекс</span><b class="rt-val">4,1<small>/5</small></b><span class="rt-bar"><i style="width:82%"></i></span><span class="rt-n">8 оценок</span><span class="rt-flag">мало отзывов</span></div><div class="rt good"><span class="rt-src">2ГИС</span><b class="rt-val">4,9<small>/5</small></b><span class="rt-bar"><i style="width:98%"></i></span><span class="rt-n">1 159 оценок</span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Бесплатная охраняемая парковка</li><li>Тихо, рядом Таврический сад</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Оценка номеров 6,1</li><li>Слышно соседей</li><li>Самый дорогой из оставшихся</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="tavrichesky"></div>
+          <div class="extra">
+            <span>С кроваткой: <b class="num">56 200 ₽</b></span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%9B%D0%B0%D1%84%D0%BE%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%206" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://ostrovok.ru/hotel/russia/st._petersburg/mid9741747/tavricheskiy_hotel/?dates=23.10.2026-27.10.2026&amp;guests=3and0.9" target="_blank" rel="noopener">На Островке ↗</a></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="gal" data-place="svet" data-name="SVET"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk b">6</span>Отель</div><h3>SVET</h3><div class="addr">пр. Просвещения 83 · север города</div></div>
+            <div class="price"><b>34 598 ₽</b><small>≈8 600 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill good">Своя платная парковка на территории</span>
+            <span class="pill warn">1 комната, 41 м²</span>
+            <span class="pill warn">Кроватка есть, цену уточнить</span>
+            <span class="pill plain">Кровать king size</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt good"><span class="rt-src">Островок</span><b class="rt-val">9,3<small>/10</small></b><span class="rt-bar"><i style="width:93%"></i></span><span class="rt-n">135 оценок</span></div><div class="rt good"><span class="rt-src">Яндекс</span><b class="rt-val">4,9<small>/5</small></b><span class="rt-bar"><i style="width:98%"></i></span><span class="rt-n">330 оценок</span></div><div class="rt good"><span class="rt-src">2ГИС</span><b class="rt-val">4,7<small>/5</small></b><span class="rt-bar"><i style="width:94%"></i></span><span class="rt-n">182 оценки</span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Новый и чистый</li><li>Своя парковка</li><li>По отзывам, кроватку дают сразу</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Спальный район на севере</li><li>Далеко от красивого центра</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="svet"></div>
+          <div class="extra">
+            <span>Дешевле всех с парковкой, но до центра ехать</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BF%D1%80%D0%BE%D1%81%D0%BF%D0%B5%D0%BA%D1%82%20%D0%9F%D1%80%D0%BE%D1%81%D0%B2%D0%B5%D1%89%D0%B5%D0%BD%D0%B8%D1%8F%2C%2083" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://ostrovok.ru/hotel/russia/st._petersburg/mid13381783/svet_hotel/?dates=23.10.2026-27.10.2026&amp;guests=3and0.9" target="_blank" rel="noopener">На Островке ↗</a></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="gal" data-place="izzziup" data-name="izzziUP"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk b">7</span>Апарт-отель</div><h3>izzziUP</h3><div class="addr">Гороховая 47В · у Фонтанки</div></div>
+            <div class="price"><b>34 600 ₽</b><small>≈8 700 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill good">Бесплатная общественная парковка у отеля</span>
+            <span class="pill warn">1 комната, 28 м²</span>
+            <span class="pill warn">Кроватка есть, цену уточнить</span>
+            <span class="pill plain">Диван, кухня</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt warn"><span class="rt-src">Островок</span><b class="rt-val">8,7<small>/10</small></b><span class="rt-bar"><i style="width:87%"></i></span><span class="rt-n">248 оценок</span></div><div class="rt good"><span class="rt-src">Яндекс</span><b class="rt-val">5,0<small>/5</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n">746 оценок</span></div><div class="rt warn"><span class="rt-src">2ГИС</span><b class="rt-val">4,5<small>/5</small></b><span class="rt-bar"><i style="width:90%"></i></span><span class="rt-n">125 оценок</span></div><div class="rt good"><span class="rt-src">Google</span><b class="rt-val">4,7<small>/5</small></b><span class="rt-bar"><i style="width:94%"></i></span><span class="rt-n">26 оценок</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Бесплатная парковка рядом</li><li>Детская комната и прачечная</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>На 2ГИС: грязно при заселении</li><li>Ночью 15° в номере с ребёнком, окна не открываются</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="izzziup"></div>
+          <div class="extra">
+            <span>Парковка общественная: место не гарантировано</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%93%D0%BE%D1%80%D0%BE%D1%85%D0%BE%D0%B2%D0%B0%D1%8F%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%2C%2047%D0%92" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://ostrovok.ru/hotel/russia/st._petersburg/mid13110655/apartotel_izzziup_4_community_lc/?dates=23.10.2026-27.10.2026&amp;guests=3and0.9" target="_blank" rel="noopener">На Островке ↗</a></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="gal" data-place="miris" data-name="Miris"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk b">8</span>Бутик-отель</div><h3>Miris</h3><div class="addr">ул. Вс. Вишневского 1А · Петроградка</div></div>
+            <div class="price"><b>47 360 ₽</b><small>≈11 800 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill warn">Платная парковка во дворе, бронировать заранее</span>
+            <span class="pill bad">1 комната, 30 м², до 3 мест</span>
+            <span class="pill bad">Кроватка на сайте не указана</span>
+            <span class="pill plain">Свой ресторан</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt good"><span class="rt-src">101hotels</span><b class="rt-val">9,6<small>/10</small></b><span class="rt-bar"><i style="width:96%"></i></span><span class="rt-n">29 оценок</span></div><div class="rt good"><span class="rt-src">Яндекс</span><b class="rt-val">5,0<small>/5</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n">943 оценки</span></div><div class="rt good"><span class="rt-src">2ГИС</span><b class="rt-val">4,9<small>/5</small></b><span class="rt-bar"><i style="width:98%"></i></span><span class="rt-n">195 оценок</span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Очень чисто и тихо</li><li>Свой ресторан</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Тесно для пятерых</li><li>Стройка у соседнего дома с 8 утра</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="miris"></div>
+          <div class="extra">
+            <span>Дорого для одной комнаты</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D1%83%D0%BB%D0%B8%D1%86%D0%B0%20%D0%92%D1%81%D0%B5%D0%B2%D0%BE%D0%BB%D0%BE%D0%B4%D0%B0%20%D0%92%D0%B8%D1%88%D0%BD%D0%B5%D0%B2%D1%81%D0%BA%D0%BE%D0%B3%D0%BE%2C%201%D0%90" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://miris-hotel.ru/" target="_blank" rel="noopener">Сайт отеля ↗</a></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="gal" data-place="lomonosova" data-name="У моста Ломоносова"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk b">9</span>Апартаменты</div><h3>У моста Ломоносова</h3><div class="addr">наб. Фонтанки 51-53</div></div>
+            <div class="price"><b>44 840 ₽</b><small>≈11 200 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill warn">Парковка не указана, уточнить</span>
+            <span class="pill good">3 комнаты, 119 м²</span>
+            <span class="pill warn">Кроватка есть, цену уточнить</span>
+            <span class="pill plain">До 6 гостей</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt good few"><span class="rt-src">Островок</span><b class="rt-val">10<small>/10</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n">2 оценки</span><span class="rt-flag">мало отзывов</span></div><div class="rt none"><span class="rt-src">Яндекс</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div><div class="rt none"><span class="rt-src">2ГИС</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Самая большая квартира в подборке</li><li>Набережная Фонтанки</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Всего 2 отзыва</li><li>На картах нет</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="lomonosova"></div>
+          <div class="extra">
+            <span>Депозит <b class="num">10 000 ₽</b></span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B5%D0%BA%D0%B8%20%D0%A4%D0%BE%D0%BD%D1%82%D0%B0%D0%BD%D0%BA%D0%B8%2C%2051-53" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://ostrovok.ru/hotel/russia/st._petersburg/mid13857688/u_mosta_lomonosova_apartments/?dates=23.10.2026-27.10.2026&amp;guests=3and0.9" target="_blank" rel="noopener">На Островке ↗</a></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="gal" data-place="kazanskogo" data-name="У Казанского"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk b">10</span>Квартира</div><h3>У Казанского</h3><div class="addr">кан. Грибоедова 22 · DereMRents</div></div>
+            <div class="price"><b>31 050 ₽</b><small>≈7 800 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill bad">Самый центр, парковаться сложно</span>
+            <span class="pill good">2 комнаты, 80 м²</span>
+            <span class="pill good">Кроватка 2 000 ₽/ночь</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt good few"><span class="rt-src">Островок</span><b class="rt-val">10<small>/10</small></b><span class="rt-bar"><i style="width:100%"></i></span><span class="rt-n">8 оценок</span><span class="rt-flag">мало отзывов</span></div><div class="rt bad few"><span class="rt-src">Яндекс</span><b class="rt-val">4,0<small>/5</small></b><span class="rt-bar"><i style="width:80%"></i></span><span class="rt-n">5 оценок</span><span class="rt-flag">мало отзывов · оценка оператора</span></div><div class="rt none"><span class="rt-src">2ГИС</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Самая дешёвая из квартир</li><li>Красиво: рядом Казанский собор</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Отзыв: в день заезда не заселили — прорвало трубы, переселили на Мойку</li><li>Парковка</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="kazanskogo"></div>
+          <div class="extra">
+            <span>С кроваткой: <b class="num">39 050 ₽</b> · депозит 10 000 ₽ наличными</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D0%BA%D0%B0%D0%BD%D0%B0%D0%BB%D0%B0%20%D0%93%D1%80%D0%B8%D0%B1%D0%BE%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%2C%2022" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://ostrovok.ru/hotel/russia/st._petersburg/mid13123521/u_kazanskogo_flat/?dates=23.10.2026-27.10.2026&amp;guests=3and0.9" target="_blank" rel="noopener">На Островке ↗</a></span>
+          </div>
+        </article>
+        <article class="card">
+          <div class="gal" data-place="dvortsovaya" data-name="У Дворцовой"></div>
+          <div class="card-top">
+            <div><div class="kind"><span class="mk b">11</span>Апартаменты</div><h3>У Дворцовой</h3><div class="addr">наб. Мойки 18 · DereMRents</div></div>
+            <div class="price"><b>43 660 ₽</b><small>≈10 900 ₽ за ночь</small></div>
+          </div>
+          <div class="chips">
+            <span class="pill bad">Самый центр, парковаться сложно</span>
+            <span class="pill good">3 комнаты, 90 м²</span>
+            <span class="pill good">Кроватка 2 000 ₽/ночь</span>
+          </div>
+          <div class="ratings">
+            <h4>Отзывы на площадках</h4>
+            <div class="rt-row"><div class="rt good"><span class="rt-src">Островок</span><b class="rt-val">9,3<small>/10</small></b><span class="rt-bar"><i style="width:93%"></i></span><span class="rt-n">25 оценок</span></div><div class="rt bad few"><span class="rt-src">Яндекс</span><b class="rt-val">4,0<small>/5</small></b><span class="rt-bar"><i style="width:80%"></i></span><span class="rt-n">5 оценок</span><span class="rt-flag">мало отзывов · оценка оператора</span></div><div class="rt none"><span class="rt-src">2ГИС</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div><div class="rt none"><span class="rt-src">Google</span><b class="rt-val">—</b><span class="rt-n">нет данных</span></div></div>
+          </div>
+          <div class="pc">
+            <div class="plus"><h4>Плюсы</h4><ul><li>Вид на Дворцовую</li><li>Три комнаты</li></ul></div>
+            <div class="minus"><h4>Минусы</h4><ul><li>Парковка в самом центре — главная проблема</li></ul></div>
+          </div>
+          <div class="bf-mini" data-place="dvortsovaya"></div>
+          <div class="extra">
+            <span>С кроваткой: <b class="num">51 660 ₽</b> · депозит 10 000 ₽ наличными</span>
+            <span class="btns"><a class="btn" href="https://yandex.ru/maps/2/saint-petersburg/?text=%D0%A1%D0%B0%D0%BD%D0%BA%D1%82-%D0%9F%D0%B5%D1%82%D0%B5%D1%80%D0%B1%D1%83%D1%80%D0%B3%2C%20%D0%BD%D0%B0%D0%B1%D0%B5%D1%80%D0%B5%D0%B6%D0%BD%D0%B0%D1%8F%20%D1%80%D0%B5%D0%BA%D0%B8%20%D0%9C%D0%BE%D0%B9%D0%BA%D0%B8%2C%2018" target="_blank" rel="noopener">На карте ↗</a><a class="btn" href="https://ostrovok.ru/hotel/russia/st._petersburg/mid13290049/u_dvortsovoy_ploschadi_apartments_4/?dates=23.10.2026-27.10.2026&amp;guests=3and0.9" target="_blank" rel="noopener">На Островке ↗</a></span>
+          </div>
+        </article>
+      </div>
+      <p class="note">* Рейтинг управляющей компании, а не конкретной квартиры.</p>
+    </div>
+  </section>
+
+  <section id="fork">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Как выбрать</div>
+        <h2>Машина во дворе или отдельные спальни</h2>
+        <p class="lead">Идеального варианта нет: у кого своя парковка, там тесно или хуже с чистотой; где три комнаты, там машину придётся ставить на улице.</p>
+      </div>
+      <div class="fork">
+        <div class="path">
+          <div class="eyebrow">Приоритет 1</div>
+          <h3>Главное — машина у дома</h3>
+          <div class="opt"><b>Terraplace</b><span class="sum">≈46 000 ₽ + кроватка</span><small>Очень чисто, но все в одной комнате 25 м²</small></div>
+          <div class="opt"><b>Бутик Отель Номера</b><span class="sum">≈45 000 ₽</span><small>Две спальни, но чистота 7,5 и нет лифта</small></div>
+        </div>
+        <div class="path">
+          <div class="eyebrow">Приоритет 2</div>
+          <h3>Главное — отдельные спальни</h3>
+          <div class="opt"><b>Tropicana</b><span class="sum">39 035 ₽ + парковка</span><small>3 спальни, 2 санузла, но мало отзывов и депозит 15 000 ₽</small></div>
+          <div class="opt"><b>Апраксин 20</b><span class="sum">45 760 ₽ + парковка</span><small>3 комнаты на первом этаже, цена уже с кроваткой</small></div>
+        </div>
+      </div>
+      <div class="next">
+        <b>Следующий шаг</b>
+        <span>Найти охраняемые парковки у Восстания 22 и Апраксина 20: цена за 4 ночи и сколько идти пешком. Если рядом есть нормальный паркинг, трёхкомнатные варианты выигрывают по сумме критериев. Если нет, выбираем между Terraplace и Номерами.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="breakfast">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Где позавтракать</div>
+        <h2>Кафе в 10 минутах от дома</h2>
+        <p class="lead">По 4–6 мест рядом с каждым из 11 адресов: все открываются не позже 9:00, в том числе в выходные, рейтинг на Яндекс Картах от 4,5. Terraplace, Номера и Tropicana стоят рядом, поэтому кафе у них частично общие.</p>
+      </div>
+      <div class="controls">
+        <div class="seg scroll" role="group" aria-label="Адрес, шорт-лист">
+          <button type="button" id="b-terraplace" data-bplace="terraplace" aria-pressed="true">Terraplace</button>
+          <button type="button" id="b-nomera" data-bplace="nomera" aria-pressed="false">Номера</button>
+          <button type="button" id="b-tropicana" data-bplace="tropicana" aria-pressed="false">Tropicana</button>
+          <button type="button" id="b-apraksin" data-bplace="apraksin" aria-pressed="false">Апраксин 20</button>
+        </div>
+        <div class="seg scroll" role="group" aria-label="Адрес, категория B">
+          <button type="button" id="b-tavrichesky" data-bplace="tavrichesky" aria-pressed="false">Таврический</button>
+          <button type="button" id="b-svet" data-bplace="svet" aria-pressed="false">SVET</button>
+          <button type="button" id="b-izzziup" data-bplace="izzziup" aria-pressed="false">izzziUP</button>
+          <button type="button" id="b-miris" data-bplace="miris" aria-pressed="false">Miris</button>
+          <button type="button" id="b-lomonosova" data-bplace="lomonosova" aria-pressed="false">Ломоносова</button>
+          <button type="button" id="b-kazanskogo" data-bplace="kazanskogo" aria-pressed="false">Казанского</button>
+          <button type="button" id="b-dvortsovaya" data-bplace="dvortsovaya" aria-pressed="false">Дворцовой</button>
+        </div>
+      </div>
+      <div class="cafes" id="cafes"></div>
+      <p class="legend">Время пешком примерное, по прямой. Часы работы и рейтинги — Яндекс Карты на 16 октября; 2ГИС не смотрели. Детский стул и место для коляски указаны, только если о них пишут в карточке или отзывах. Часы на выходные 24–25 октября лучше уточнить звонком.</p>
+    </div>
+  </section>
+
+  <section id="all">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Сводная таблица</div>
+        <h2>Все 14 мест</h2>
+      </div>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Категория">
+          <button type="button" id="f-all" data-cat="all" aria-pressed="true">Все</button>
+          <button type="button" id="f-a" data-cat="A" aria-pressed="false">A</button>
+          <button type="button" id="f-b" data-cat="B" aria-pressed="false">B</button>
+          <button type="button" id="f-c" data-cat="C" aria-pressed="false">C</button>
+        </div>
+        <div class="seg" role="group" aria-label="Сортировка">
+          <button type="button" id="s-cat" data-sort="cat" aria-pressed="true">По категории</button>
+          <button type="button" id="s-price" data-sort="price" aria-pressed="false">По цене</button>
+          <button type="button" id="s-rooms" data-sort="rooms" aria-pressed="false">По комнатам</button>
+        </div>
+        <label class="toggle" for="f-park"><input type="checkbox" id="f-park"> Только с парковкой у отеля</label>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th></th><th>Место</th><th>Формат</th><th>4 ночи</th><th>Парковка</th><th>Кроватка</th><th class="rc">Островок</th><th class="rc">Яндекс</th><th class="rc">2ГИС</th><th class="rc">Google</th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+        <div class="empty" id="empty" hidden>Под эти фильтры ничего не подходит.</div>
+      </div>
+      <p class="legend">Тип жилья — как его называет сам объект на Островке или своём сайте. В отеле и апарт-отеле есть ресепшен и уборка; апартаменты и квартира — отдельное жильё с кухней, заселение по договорённости с хозяином. A — сильные кандидаты, B — подходят с оговорками, C — не подходят. Островок из 10, остальные из 5; под оценкой — число оценок, «опер.» — рейтинг управляющей компании. Бледная цифра — меньше 20 оценок.</p>
+    </div>
+  </section>
+
+  <section id="others">
+    <div class="wrap">
+      <div class="one">
+        <div class="list">
+          <h3>Отсеяли</h3>
+          <div class="item"><b>Wynwood · 114 400 ₽</b><span>Своя парковка и отличные отзывы, но свободен только сьют до 4 мест — в 3–4 раза дороже квартир.</span></div>
+          <div class="item"><b>Квартира Катрин · 23 600 ₽</b><span>Максимум 4 гостя. На 2ГИС 3,0: бар под окнами до 6 утра, техника изношена. Парковаться негде.</span></div>
+          <div class="item"><b>Dostoevsky Rooms · 24 800 ₽</b><span>Максимум 3 гостя на 21 м². Слышно коридор и улицу.</span></div>
+          <div class="item"><b>Академиа, Особняк Теплова</b><span>На 23–27 октября мест нет. Лучшие отзывы в подборке (Яндекс 5,0 по 920 оценкам) — если даты сдвинутся, проверить снова.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="prep">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="eyebrow">Перед бронью</div>
+        <h2>Что уточнить и учесть</h2>
+      </div>
+      <div class="prep">
+        <div class="box">
+          <h3>Открытые вопросы</h3>
+          <ul class="checks">
+            <li><label for="q1"><input type="checkbox" id="q1"><span>Tropicana, Номера, Апраксин 20: уточнить, как стоят кровати и где ставить машину</span></label></li>
+            <li><label for="q2"><input type="checkbox" id="q2"><span>Terraplace: заранее забронировать место во дворе — даётся при наличии</span></label></li>
+            <li><label for="q3"><input type="checkbox" id="q3"><span>Номера: попросить номер во двор, проверить чистоту при заезде</span></label></li>
+            <li><label for="q4"><input type="checkbox" id="q4"><span>Кроватка: у Terraplace и Tropicana узнать цену, у остальных подтвердить бронь кроватки на 4 ночи</span></label></li>
+          </ul>
+          <h3>Общие условия</h3>
+          <ul>
+            <li>Детская кроватка есть у всех мест из категорий A и B, кроме Miris: там на сайте о ней ничего нет. Цены: Номера 500 ₽/ночь, Таврический 1 000 ₽/ночь, квартиры DereMRents 2 000 ₽/ночь; у остальных цену нужно уточнять.</li>
+            <li>Квартиры DereMRents (Казанского, Апраксин, Дворцовая): депозит 10 000 ₽ наличными.</li>
+            <li>Terraplace: заезд с 14:00, выезд до 12:00.</li>
+            <li>Квартиры на Островке: заезд с 15:00, выезд до 11:00.</li>
+          </ul>
+        </div>
+        <div class="box bridge-note">
+          <h3>Мосты разводят по ночам</h3>
+          <p>Навигация на Неве обычно идёт до конца ноября, так что в наши даты мосты ещё разводят, примерно с часа до пяти утра. Все четыре места из шорт-листа на левом берегу, в центре. Если вечером едете на Петроградку или Васильевский, возвращаться нужно до разводки. Точный график — на сайте Мостотреста.</p>
+          <p>Свободные варианты на эти даты быстро разбирают: цены и наличие проверены 16 октября.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Цены и наличие на 16.10.2026, за 4 ночи. Островок: 3 взрослых + 2 детей (0 и 9 лет). Сайты отелей на TravelLine: 3 + 1, малыш в кроватке.</span>
+    <span>Фото — из галерей Островка. У петербургских мест на Google мало отзывов; карточки Miris, Академиа, Таврического и SVET там не загрузились, поэтому прочерк.</span>
+  </div>
+</footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Фото">
+  <div class="lb-top"><span><b id="lb-name"></b> · <span id="lb-n" class="num"></span></span><button type="button" id="lb-close" aria-label="Закрыть">×</button></div>
+  <div class="lb-stage"><img id="lb-img" alt=""><button type="button" class="lb-prev" id="lb-prev" aria-label="Предыдущее фото">‹</button><button type="button" class="lb-next" id="lb-next" aria-label="Следующее фото">›</button></div>
+  <div class="lb-cap" id="lb-cap"></div>
+</div>
+
+<script>
+(function(){
+  var O = "https://ostrovok.ru/hotel/russia/st._petersburg/", Q = "/?dates=23.10.2026-27.10.2026&guests=3and0.9";
+  var DATA = [
+    {cat:"A",name:"Terraplace",kind:"Бутик-отель",cot:"Есть, цену уточнить",addr:"Невский 107В",fmt:"Семейная студия 25 м², кухня",rooms:1,price:40018,park:"good",parkT:"Во дворе, 1 500 ₽/ночь, по запросу",r:"9,4 (61) · 5,0 (244) · 4,9 (55) · 5,0 (6)",url:O+"mid10679090/terraplace_by_mix_hotels_hotel"+Q},
+    {cat:"A",name:"Бутик Отель Номера",kind:"Апартаменты в отеле",cot:"500 ₽/ночь",addr:"Гончарная 26",fmt:"2 спальни, 39 м², кухня",rooms:2,price:41042,park:"good",parkT:"Своя охраняемая во дворе, ~500 ₽/сутки",r:"8,9 (1606) · 4,9 (3738) · 4,5 (2880) · 4,2 (272)",url:O+"mid9204517/renome_hotel"+Q},
+    {cat:"A",name:"LetYourFlat Tropicana",kind:"Апартаменты",cot:"Есть, до 4 лет возможно бесплатно",addr:"Восстания 22",fmt:"3 спальни, 90 м², 2 санузла",rooms:3,price:39035,park:"warn",parkT:"Не указана, городская платная",r:"9,9 (5) · 5,0 (426)* · 3,4 (12)* · —",url:O+"mid9994752/letyourflat_tropicana_3_bedrooms"+Q},
+    {cat:"A",name:"Апраксин 20",kind:"Апартаменты",cot:"2 000 ₽/ночь",addr:"Апраксин пер. 20, DereMRents",fmt:"3 комнаты, 110 м², 1 этаж",rooms:3,price:37760,park:"warn",parkT:"Платная рядом",r:"9,5 (39) · 4,0 (5)* · — · —",url:O+"mid13128038/prostornye_na_apraksinom_20_apartments"+Q},
+    {cat:"B",name:"У Казанского",kind:"Квартира",cot:"2 000 ₽/ночь",addr:"кан. Грибоедова 22, DereMRents",fmt:"2 комнаты, 80 м²",rooms:2,price:31050,park:"bad",parkT:"Самый центр, парковаться сложно",r:"10 (8) · 4,0 (5)* · — · —",url:O+"mid13123521/u_kazanskogo_flat"+Q},
+    {cat:"B",name:"У Дворцовой",kind:"Апартаменты",cot:"2 000 ₽/ночь",addr:"Мойка 18, DereMRents",fmt:"3 комнаты, 90 м²",rooms:3,price:43660,park:"bad",parkT:"Самый центр, парковаться сложно",r:"9,3 (25) · 4,0 (5)* · — · —",url:O+"mid13290049/u_dvortsovoy_ploschadi_apartments_4"+Q},
+    {cat:"B",name:"У моста Ломоносова",kind:"Апартаменты",cot:"Есть, цену уточнить",addr:"Фонтанка 51-53",fmt:"3 комнаты, 119 м², до 6 гостей",rooms:3,price:44840,park:"warn",parkT:"Не указана, уточнить",r:"10 (2) · — · — · —",url:O+"mid13857688/u_mosta_lomonosova_apartments"+Q},
+    {cat:"B",name:"Miris",kind:"Бутик-отель",cot:"На сайте не указана",addr:"Вс. Вишневского 1А, Петроградка",fmt:"Делюкс 30 м², до 3 мест",rooms:1,price:47360,park:"warn",parkT:"Платная, бронировать заранее",r:"9,6 (29, 101hotels) · 5,0 (943) · 4,9 (195) · —",url:"https://miris-hotel.ru/"},
+    {cat:"B",name:"izzziUP",kind:"Апарт-отель",cot:"Есть, цену уточнить",addr:"Гороховая 47В",fmt:"Семейный 28 м², диван, кухня",rooms:1,price:34600,park:"good",parkT:"Бесплатная общественная у отеля",r:"8,7 (248) · 5,0 (746) · 4,5 (125) · 4,7 (26)",url:O+"mid13110655/apartotel_izzziup_4_community_lc"+Q},
+    {cat:"B",name:"SVET",kind:"Отель",cot:"Есть, цену уточнить",addr:"пр. Просвещения 83, север",fmt:"Люкс-апартаменты 41 м², king size",rooms:1,price:34598,park:"good",parkT:"Своя платная на территории",r:"9,3 (135) · 4,9 (330) · 4,7 (182) · —",url:O+"mid13381783/svet_hotel"+Q},
+    {cat:"B",name:"Таврический",kind:"Отель",cot:"1 000 ₽/ночь",addr:"Лафонская 6",fmt:"Люкс 35 м², двуспальная + доп. кровати",rooms:1,price:52200,park:"good",parkT:"Бесплатная охраняемая",r:"8,2 (115) · 4,1 (8) · 4,9 (1159) · —",url:O+"mid9741747/tavricheskiy_hotel"+Q},
+    {cat:"C",name:"Квартира Катрин",kind:"Квартира",cot:"Не проверяли",addr:"Рубинштейна 32",fmt:"2 комнаты, 53 м², до 4 мест",rooms:2,price:23600,park:"bad",parkT:"Нет, встать сложно",r:"— · нет отзывов · 3,0 (2) · —",url:"https://kvartira-katrin.ru/"},
+    {cat:"C",name:"Dostoevsky Rooms",kind:"Мини-отель",cot:"Не проверяли",addr:"Достоевского 20-22",fmt:"21 м², до 3 гостей",rooms:1,price:24800,park:"warn",parkT:"Не указана",r:"— · 4,9 (89) · — · —",url:"https://dostoevsky22.com/"},
+    {cat:"C",name:"Академиа Особняк Теплова",kind:"Бутик-отель",cot:"Не проверяли",addr:"Галерная 61",fmt:"Сьюты с диваном",rooms:1,price:null,park:"bad",parkT:"Своей нет",r:"9,2 (93) · 5,0 (920) · 5,0 (269) · —",url:O+"mid9989857/academia_osobnyak_na_galernoj_boutiquehotel"+Q}
+  ];
+  var state = {cat:"all", sort:"cat", park:false};
+  try { var saved = JSON.parse(localStorage.getItem("piter-table") || "null"); if (saved) state = Object.assign(state, saved); } catch(e) {}
+  var rows = document.getElementById("rows"), empty = document.getElementById("empty"), park = document.getElementById("f-park");
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]; }); }
+  function fmt(n){ return n == null ? "мест нет" : n.toLocaleString("ru-RU").replace(/,/g," ") + " ₽"; }
+  function rtCells(r){
+    return r.split(" · ").map(function(part, i){
+      var m = /^(\d+(?:,\d+)?)/.exec(part);
+      if (!m) return '<td class="rc"><span class="tr none">' + (part.indexOf("нет") === 0 ? "нет" : "—") + '</span></td>';
+      var v = parseFloat(m[1].replace(",", ".")), scale = i === 0 ? 10 : 5;
+      var q = scale === 10 ? (v >= 9 ? "good" : v >= 8.5 ? "warn" : "bad") : (v >= 4.7 ? "good" : v >= 4.3 ? "warn" : "bad");
+      var c = /\((\d+)/.exec(part), n = c ? +c[1] : null, op = part.indexOf("*") >= 0, src = /101hotels/.test(part) ? "101hotels" : "";
+      return '<td class="rc"><span class="tr ' + q + (n !== null && n < 20 ? ' few' : '') + '"><b>' + m[1] + '</b>' + (n !== null ? '<small>' + n.toLocaleString("ru-RU") + (op ? ' · опер.' : '') + (src ? ' · ' + src : '') + '</small>' : '') + '</span></td>';
+    }).join("");
+  }
+  function render(){
+    var list = DATA.filter(function(d){ return (state.cat === "all" || d.cat === state.cat) && (!state.park || d.park === "good"); });
+    var order = DATA.slice();
+    list.sort(function(a,b){
+      if (state.sort === "price") return (a.price == null ? 1e9 : a.price) - (b.price == null ? 1e9 : b.price);
+      if (state.sort === "rooms") return b.rooms - a.rooms || (a.price||1e9) - (b.price||1e9);
+      return order.indexOf(a) - order.indexOf(b);
+    });
+    rows.innerHTML = list.map(function(d){
+      return '<tr><td><span class="cat ' + d.cat + '">' + d.cat + '</span></td>' +
+        '<td><a href="' + esc(d.url) + '" target="_blank" rel="noopener">' + esc(d.name) + '</a><div class="sub">' + esc(d.kind) + ' · ' + esc(d.addr) + '</div></td>' +
+        '<td>' + esc(d.fmt) + '</td>' +
+        '<td class="p">' + fmt(d.price) + '</td>' +
+        '<td><span class="pill ' + d.park + '">' + esc(d.parkT) + '</span></td>' +
+        '<td class="sub2">' + esc(d.cot) + '</td>' +
+        rtCells(d.r) + '</tr>';
+    }).join("");
+    empty.hidden = list.length > 0;
+    document.querySelectorAll("[data-cat]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.cat === state.cat)); });
+    document.querySelectorAll("[data-sort]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.sort === state.sort)); });
+    park.checked = state.park;
+    try { localStorage.setItem("piter-table", JSON.stringify(state)); } catch(e) {}
+  }
+  document.querySelectorAll("[data-cat]").forEach(function(b){ b.addEventListener("click", function(){ state.cat = b.dataset.cat; render(); }); });
+  document.querySelectorAll("[data-sort]").forEach(function(b){ b.addEventListener("click", function(){ state.sort = b.dataset.sort; render(); }); });
+  park.addEventListener("change", function(){ state.park = park.checked; render(); });
+  render();
+
+
+  var BF = {"terraplace": [{"name": "ЛюдиЛюбят", "address": "Невский пр., 140", "walk_min": 2, "distance_m": 81, "opens_weekdays": "8:00–23:00", "opens_weekend": "8:00–23:00", "rating_yandex": "4,7 (704 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 200–400 ₽; бизнес-ланч 259 ₽", "kids": null, "why": "Самый близкий вариант и недорогой, домашняя кухня, с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/ludilove/216403406282/", "best": false}, {"name": "Baggins Coffee", "address": "Невский пр., 136", "walk_min": 2, "distance_m": 92, "opens_weekdays": "8:00–21:00", "opens_weekend": "9:00–21:00", "rating_yandex": "5,0 (292 оценок)", "rating_2gis": "не проверено", "avg_check": "капучино от 160 ₽; средний чек не указан", "kids": "детское меню (Яндекс Карты); в отзыве: мягкие стулья, удобные столики; детский стул — не проверено", "why": "Кофейня в двух шагах от дома — запасной вариант на кофе и выпечку.", "url": "https://yandex.ru/maps/org/baggins_coffee/224629302225/", "best": false}, {"name": "БлинВиль", "address": "Невский пр., 132", "walk_min": 3, "distance_m": 176, "opens_weekdays": "8:00–23:00", "opens_weekend": "8:00–23:00", "rating_yandex": "5,0 (595 оценок)", "rating_2gis": "не проверено", "avg_check": "завтрак «Активный» от 479 ₽ (по данным Яндекс Карт); бизнес-ланч 395 ₽", "kids": "детское меню (Яндекс Карты); в отзывах: удобно с коляской, между столами свободно, персонал приносит раскраски и игры; детский стул — не проверено", "why": "Блинная с завтраками и самым «детским» форматом из ближайших.", "url": "https://yandex.ru/maps/org/blinvil/21124057477/", "best": true}, {"name": "Doris Local", "address": "Невский пр., 150", "walk_min": 4, "distance_m": 232, "opens_weekdays": "8:00–21:00", "opens_weekend": "8:00–21:00", "rating_yandex": "4,9 (1341 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 300–600 ₽; капучино 240–270 ₽", "kids": "детский туалет (Яндекс Карты); в отзыве упомянут детский стульчик и накладка в туалете; детское меню — не проверено", "why": "Кофейня-кафе, завтраки подают до 18:00, открыта с 8:00 каждый день.", "url": "https://yandex.ru/maps/org/doris_local/6121908816/", "best": false}, {"name": "Цех85", "address": "Невский пр., 122", "walk_min": 6, "distance_m": 330, "opens_weekdays": "7:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,8 (888 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 400–500 ₽; бизнес-ланч 419 ₽", "kids": "детское меню (Яндекс Карты); стул и коляска — не проверено", "why": "Пекарня-кондитерская с завтраками, в будни с 7:00.", "url": "https://yandex.ru/maps/org/tseh85/113696647032/", "best": false}, {"name": "Британские пекарни", "address": "ул. Восстания, 3–5", "walk_min": 11, "distance_m": 645, "opens_weekdays": "8:00–22:00", "opens_weekend": "9:00–22:00", "rating_yandex": "4,9 (1732 оценок)", "rating_2gis": "не проверено", "avg_check": "капучино от 230 ₽, бизнес-ланч 430 ₽; средний чек не указан", "kids": "детское меню (Яндекс Карты); стул и коляска — не проверено", "why": "Пекарня-кафе с завтраками; в выходные открывается ровно в 9:00.", "url": "https://yandex.ru/maps/org/britanskiye_pekarni/1706087832/", "best": false}], "nomera": [{"name": "ЛюдиЛюбят", "address": "Невский пр., 140", "walk_min": 4, "distance_m": 199, "opens_weekdays": "8:00–23:00", "opens_weekend": "8:00–23:00", "rating_yandex": "4,7 (704 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 200–400 ₽; бизнес-ланч 259 ₽", "kids": null, "why": "Самый близкий вариант и недорогой, домашняя кухня, с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/ludilove/216403406282/", "best": false}, {"name": "Doris Local", "address": "Невский пр., 150", "walk_min": 4, "distance_m": 204, "opens_weekdays": "8:00–21:00", "opens_weekend": "8:00–21:00", "rating_yandex": "4,9 (1341 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 300–600 ₽; капучино 240–270 ₽", "kids": "детский туалет (Яндекс Карты); в отзыве упомянут детский стульчик и накладка в туалете; детское меню — не проверено", "why": "Кофейня-кафе, завтраки подают до 18:00, открыта с 8:00 каждый день.", "url": "https://yandex.ru/maps/org/doris_local/6121908816/", "best": false}, {"name": "БлинВиль", "address": "Невский пр., 132", "walk_min": 5, "distance_m": 293, "opens_weekdays": "8:00–23:00", "opens_weekend": "8:00–23:00", "rating_yandex": "5,0 (595 оценок)", "rating_2gis": "не проверено", "avg_check": "завтрак «Активный» от 479 ₽ (по данным Яндекс Карт); бизнес-ланч 395 ₽", "kids": "детское меню (Яндекс Карты); в отзывах: удобно с коляской, между столами свободно, персонал приносит раскраски и игры; детский стул — не проверено", "why": "Блинная с завтраками и самым «детским» форматом из ближайших.", "url": "https://yandex.ru/maps/org/blinvil/21124057477/", "best": true}, {"name": "Столовая", "address": "Гончарная ул., 8", "walk_min": 5, "distance_m": 293, "opens_weekdays": "круглосуточно", "opens_weekend": "круглосуточно", "rating_yandex": "4,5 (392 оценок)", "rating_2gis": "не проверено", "avg_check": "чек ~200 ₽ (Яндекс Карты)", "kids": null, "why": "Самый дешёвый вариант: работает круглосуточно, завтрак можно взять в любое время.", "url": "https://yandex.ru/maps/org/canteen/109687695829/", "best": false}, {"name": "Entry Coffeeshop & Wine", "address": "Гончарная ул., 8", "walk_min": 5, "distance_m": 304, "opens_weekdays": "8:00–23:00", "opens_weekend": "8:00–23:00", "rating_yandex": "4,6 (444 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 350–400 ₽; бизнес-ланч 390 ₽", "kids": "детское меню (Яндекс Карты); стул и коляска — не проверено", "why": "На той же улице, что и отель, открыто с 8:00 каждый день, завтраки есть.", "url": "https://yandex.ru/maps/org/entry_coffeeshop_wine/35673109777/", "best": false}, {"name": "Цех85", "address": "Невский пр., 122", "walk_min": 8, "distance_m": 434, "opens_weekdays": "7:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,8 (888 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 400–500 ₽; бизнес-ланч 419 ₽", "kids": "детское меню (Яндекс Карты); стул и коляска — не проверено", "why": "Пекарня-кондитерская с завтраками, в будни с 7:00.", "url": "https://yandex.ru/maps/org/tseh85/113696647032/", "best": false}], "tropicana": [{"name": "Смена", "address": "Басков пер., 20", "walk_min": 3, "distance_m": 174, "opens_weekdays": "8:00–20:00", "opens_weekend": "9:00–20:00", "rating_yandex": "4,9 (2601 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 700–900 ₽; капучино 170–250 ₽", "kids": null, "why": "Кофейня-кафе рядом с домом с завтраками.", "url": "https://yandex.ru/maps/org/smena/75561588090/", "best": false}, {"name": "Кушать подано", "address": "ул. Восстания, 28", "walk_min": 4, "distance_m": 195, "opens_weekdays": "9:00–21:00", "opens_weekend": "9:00–21:00", "rating_yandex": "5,0 (4100 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 250–400 ₽", "kids": "в отзыве: вдвоём с ребёнком поели полноценно на 500 ₽; детское меню, стул — не проверено", "why": "Столовая рядом с домом: быстро, дёшево, 4 100 оценок; открывается ровно в 9:00.", "url": "https://yandex.ru/maps/org/kushat_podano/36699878617/", "best": false}, {"name": "Зое", "address": "ул. Радищева, 29", "walk_min": 4, "distance_m": 234, "opens_weekdays": "8:00–20:00 (пн до 19:00)", "opens_weekend": "8:00–20:00", "rating_yandex": "4,9 (3776 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 600–874 ₽; капучино 230–300 ₽", "kids": null, "why": "Пекарня-кофейня, открыта с 8:00 без выходных, много отзывов.", "url": "https://yandex.ru/maps/org/zoe/233783277610/", "best": false}, {"name": "Теремок", "address": "ул. Восстания, 32", "walk_min": 5, "distance_m": 269, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,5 (1281 оценок)", "rating_2gis": "не проверено", "avg_check": "чек от 350 ₽; бизнес-ланч 199 ₽", "kids": "вход доступен для колясок (Яндекс Карты: «доступно»); детское меню — не проверено", "why": "Блины и русская кухня, дёшево, с 8:00 каждый день.", "url": "https://yandex.ru/maps/org/teremok/151868947679/", "best": false}, {"name": "Brunch", "address": "ул. Рылеева, 13", "walk_min": 10, "distance_m": 575, "opens_weekdays": "8:00–21:00", "opens_weekend": "9:00–22:00", "rating_yandex": "5,0 (2417 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 400–700 ₽; бизнес-ланч 400 ₽", "kids": "детское меню (Яндекс Карты); стул и коляска — не проверено", "why": "Кафе, где завтрак — основное блюдо; рейтинг 5,0 при 2 417 оценках.", "url": "https://yandex.ru/maps/org/brunch/97937361212/", "best": true}, {"name": "Британские пекарни", "address": "ул. Восстания, 3–5", "walk_min": 10, "distance_m": 576, "opens_weekdays": "8:00–22:00", "opens_weekend": "9:00–22:00", "rating_yandex": "4,9 (1732 оценок)", "rating_2gis": "не проверено", "avg_check": "капучино от 230 ₽, бизнес-ланч 430 ₽; средний чек не указан", "kids": "детское меню (Яндекс Карты); стул и коляска — не проверено", "why": "Пекарня-кафе с завтраками; в выходные открывается ровно в 9:00.", "url": "https://yandex.ru/maps/org/britanskiye_pekarni/1706087832/", "best": false}], "apraksin": [{"name": "Baggins Coffee", "address": "наб. Фонтанки, 67–69", "walk_min": 1, "distance_m": 59, "opens_weekdays": "8:00–21:00", "opens_weekend": "9:00–21:00", "rating_yandex": "5,0 (174 оценок)", "rating_2gis": "не проверено", "avg_check": "средний чек не указан", "kids": null, "why": "Кофейня в 60 м от дома, пригодится на утренний кофе.", "url": "https://yandex.ru/maps/org/baggins_coffee/167291630714/", "best": false}, {"name": "Хлебник", "address": "наб. Фонтанки, 71", "walk_min": 1, "distance_m": 61, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "5,0 (483 оценок)", "rating_2gis": "не проверено", "avg_check": "капучино 179–219 ₽; средний чек не указан", "kids": null, "why": "В минуте ходьбы от дома: свежая выпечка и кофе с 8:00 каждый день.", "url": "https://yandex.ru/maps/org/hlebnik/237344076617/", "best": false}, {"name": "Kos. Place", "address": "Бородинская ул., 4А", "walk_min": 3, "distance_m": 159, "opens_weekdays": "8:30–21:00", "opens_weekend": "9:00–21:00", "rating_yandex": "5,0 (1042 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 250–500 ₽; капучино 210–230 ₽; бизнес-ланч 800 ₽", "kids": "детское меню (Яндекс Карты); стул и коляска — не проверено", "why": "Самый близкий кафе-вариант с завтраками (по карте — с 9:00 до 12:00) и детским меню.", "url": "https://yandex.ru/maps/org/kos_place/128720879685/", "best": true}, {"name": "Булочная Ф. Вольчека", "address": "наб. Фонтанки, 80/2", "walk_min": 3, "distance_m": 184, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,7 (195 оценок)", "rating_2gis": "не проверено", "avg_check": "средний чек не указан", "kids": "в отзыве: есть отдельная комната со столом и стульчиками; детское меню — не проверено", "why": "Пекарня с залом, где можно посидеть: удобно с коляской и ребёнком (по отзыву).", "url": "https://yandex.ru/maps/org/bulochnaya_f_volcheka/62642854183/", "best": false}, {"name": "Мама Рома", "address": "наб. Фонтанки, 79", "walk_min": 4, "distance_m": 202, "opens_weekdays": "8:00–23:30", "opens_weekend": "8:00–23:30 (пт, сб до 1:00)", "rating_yandex": "4,9 (8027 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 800–1200 ₽", "kids": "в отзыве: можно приехать на завтрак и бизнес-ланч с детьми; детское меню и стул — не проверено", "why": "Итальянский ресторан со свободными завтраками с 8:00 каждый день, 8 000+ оценок.", "url": "https://yandex.ru/maps/org/mama_roma/94301307614/", "best": false}, {"name": "ЛюдиЛюбят", "address": "Садовая ул., 38", "walk_min": 7, "distance_m": 424, "opens_weekdays": "8:00–23:00", "opens_weekend": "8:00–23:00", "rating_yandex": "4,9 (248 оценок)", "rating_2gis": "не проверено", "avg_check": "средний чек не указан", "kids": null, "why": "Пекарня-кафе с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/lyudilyubyat/230551372709/", "best": false}], "kazanskogo": [{"name": "Пироговый дворик", "address": "наб. канала Грибоедова, 22", "walk_min": 1, "distance_m": 12, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,9 (5158 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 349–549 ₽", "kids": "детское меню (Яндекс Карты: «специальное меню — детское»; в отзыве: «прекрасное детское меню»); детский стул и удобство с коляской — не проверено", "why": "В том же доме: завтрак и своя пекарня по карточке, с 8:00 без выходных, недорого.", "url": "https://yandex.ru/maps/org/pirogovyy_dvorik/1017013943/", "best": true}, {"name": "Цех85", "address": "наб. канала Грибоедова, 23", "walk_min": 2, "distance_m": 108, "opens_weekdays": "7:30–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,7 (544 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 400–500 ₽", "kids": "детское меню (Яндекс Карты); детский стул и удобство с коляской — не проверено", "why": "Кофейня-пекарня через канал, завтрак в карточке, в будни открывается в 7:30.", "url": "https://yandex.ru/maps/org/tseh85/193695003216/", "best": false}, {"name": "Тарелка", "address": "наб. канала Грибоедова, 25", "walk_min": 3, "distance_m": 142, "opens_weekdays": "8:00–21:00", "opens_weekend": "8:00–21:00", "rating_yandex": "4,8 (3467 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 250–350 ₽", "kids": "в карточке отмечено «для детей»; в отзыве: завтракали с детьми, блинчики, спокойно; детский стул и удобство с коляской — не проверено", "why": "Недорогая столовая-кафе с завтраками с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/tarelka/162001608055/", "best": false}, {"name": "ЛюдиЛюбят", "address": "наб. канала Грибоедова, 28/1", "walk_min": 3, "distance_m": 148, "opens_weekdays": "8:00–23:00", "opens_weekend": "8:00–23:00", "rating_yandex": "5,0 (659 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 200–400 ₽", "kids": null, "why": "Пекарня-кондитерская с рейтингом 5,0, с 8:00 без выходных, самый небольшой чек.", "url": "https://yandex.ru/maps/org/ludilove/126896474007/", "best": false}, {"name": "Британские пекарни", "address": "Малая Конюшенная ул., 16/26", "walk_min": 4, "distance_m": 240, "opens_weekdays": "8:00–22:00", "opens_weekend": "9:00–22:00", "rating_yandex": "4,9 (2033 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": "детское меню (Яндекс Карты); в отзыве: «с детьми часто тут бываем»; детский стул и удобство с коляской — не проверено", "why": "Пекарня-кофейня с выпечкой и десертами, 4,9 на 2000+ оценок; в выходные с 9:00.", "url": "https://yandex.ru/maps/org/britanskiye_pekarni/36535005724/", "best": false}, {"name": "Север-Метрополь", "address": "Садовая ул., 22/2", "walk_min": 7, "distance_m": 386, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,8 (1578 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 500–900 ₽", "kids": "детское меню (Яндекс Карты); в отзыве: «очень любим посещать с детьми»; детский стул и удобство с коляской — не проверено", "why": "Кондитерская-кофейня с завтраками с 8:00 без выходных; чуть дальше остальных (~7 мин).", "url": "https://yandex.ru/maps/org/sever_metropol/1048235258/", "best": false}], "dvortsovaya": [{"name": "Chernilacoffee", "address": "наб. реки Мойки, 35", "walk_min": 1, "distance_m": 59, "opens_weekdays": "9:00–21:00", "opens_weekend": "9:00–21:00", "rating_yandex": "5,0 (766 оценок)", "rating_2gis": "не проверено", "avg_check": "чек от 500 ₽", "kids": null, "why": "Почти у самого дома, рейтинг 5,0; кофейня-кондитерская, открывается в 9:00 ежедневно.", "url": "https://yandex.ru/maps/org/chernilacoffee/165799670431/", "best": false}, {"name": "Троицкий мост", "address": "наб. реки Мойки, 30", "walk_min": 4, "distance_m": 206, "opens_weekdays": "9:00–21:00", "opens_weekend": "9:00–21:00", "rating_yandex": "4,7 (1234 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 350–600 ₽", "kids": null, "why": "Кафе-кондитерская на Мойке с завтраком в карточке, ежедневно с 9:00.", "url": "https://yandex.ru/maps/org/troickij_most/201253839745/", "best": false}, {"name": "Ягода", "address": "Большая Конюшенная ул., 3", "walk_min": 4, "distance_m": 213, "opens_weekdays": "8:00–22:00", "opens_weekend": "9:00–22:00", "rating_yandex": "4,8 (1087 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": "детское меню (Яндекс Карты); в отзывах о завтраке с детьми есть жалобы на обслуживание; детский стул и удобство с коляской — не проверено", "why": "Кофейня-кондитерская с завтраками, 4,8; в выходные с 9:00.", "url": "https://yandex.ru/maps/org/yagoda/242854545939/", "best": false}, {"name": "Булочная Ф. Вольчека", "address": "наб. реки Мойки, 6", "walk_min": 4, "distance_m": 231, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "5,0 (4807 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": "в отзыве: удобно зайти с детьми и перекусить недорого; детское меню, детский стул и коляска — не проверено", "why": "Пекарня с рейтингом 5,0 на 4800 оценок, с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/bulochnaya_f_volcheka/115654707760/", "best": false}, {"name": "РиоРим", "address": "Большая Конюшенная ул., 4-6-8В", "walk_min": 5, "distance_m": 292, "opens_weekdays": "8:00–22:00", "opens_weekend": "9:00–22:00", "rating_yandex": "4,8 (1275 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 350–700 ₽", "kids": "детское меню (Яндекс Карты); в отзыве: были с детьми, понравилось; детский стул и удобство с коляской — не проверено", "why": "Итальянское кафе-пекарня с завтраками, суп и паста для старшего сына; в выходные с 9:00.", "url": "https://yandex.ru/maps/org/riorim/77895649918/", "best": false}, {"name": "Maidel", "address": "Миллионная ул., 18", "walk_min": 5, "distance_m": 303, "opens_weekdays": "8:00–20:00", "opens_weekend": "8:00–21:00", "rating_yandex": "4,8 (1663 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 600–800 ₽", "kids": "детское меню (Яндекс Карты); в отзыве: ребёнку принесли листочки и карандаши; детский стул и удобство с коляской — не проверено", "why": "Кафе с завтраками с 8:00 без выходных, 4,8 на 1600+ оценок, внимание к детям в отзывах.", "url": "https://yandex.ru/maps/org/maidel_cafe/225800710171/", "best": true}], "lomonosova": [{"name": "Bistrot Le Moujik", "address": "наб. реки Фонтанки, 52", "walk_min": 4, "distance_m": 193, "opens_weekdays": "8:00–23:00", "opens_weekend": "8:00–23:00", "rating_yandex": "4,9 (3424 оценок)", "rating_2gis": "не проверено", "avg_check": "чек ~2500 ₽", "kids": null, "why": "Ближе всех (~4 мин), завтрак с 8:00, 4,9; но дорого.", "url": "https://yandex.ru/maps/org/bistrot_le_moujik/111638973647/", "best": false}, {"name": "Хлебник", "address": "ул. Ломоносова, 20", "walk_min": 5, "distance_m": 306, "opens_weekdays": "8:00–21:00", "opens_weekend": "9:00–21:00", "rating_yandex": "5,0 (223 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": null, "why": "Пекарня-кофейня с завтраками в ~5 мин; оценок меньше, чем у соседей; в выходные с 9:00.", "url": "https://yandex.ru/maps/org/hlebnik/206952025289/", "best": false}, {"name": "Surf Coffee", "address": "ул. Рубинштейна, 9/3литА", "walk_min": 7, "distance_m": 407, "opens_weekdays": "9:00–22:00", "opens_weekend": "9:00–22:00", "rating_yandex": "4,9 (925 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": "детское меню (Яндекс Карты); детский стул и удобство с коляской — не проверено", "why": "Кофейня с рейтингом 4,9, ежедневно с 9:00.", "url": "https://yandex.ru/maps/org/surf_coffee/54084377969/", "best": false}, {"name": "Булочная Ф. Вольчека", "address": "наб. реки Фонтанки, 80/2", "walk_min": 8, "distance_m": 434, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,7 (195 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": "в отзыве: можно посидеть в отдельной комнате, есть стол и стульчики; именно детские стулья, детское меню и коляска — не проверено", "why": "Пекарня с местами, где можно посидеть; с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/bulochnaya_f_volcheka/62642854183/", "best": false}, {"name": "Север-Метрополь", "address": "Садовая ул., 22/2", "walk_min": 8, "distance_m": 444, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,8 (1578 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 500–900 ₽", "kids": "детское меню (Яндекс Карты); в отзыве: «очень любим посещать с детьми»; детский стул и удобство с коляской — не проверено", "why": "Кондитерская-кофейня с завтраками, 4,8 на 1500+ оценок, с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/sever_metropol/1048235258/", "best": true}, {"name": "Цех85", "address": "Загородный просп., 9", "walk_min": 8, "distance_m": 473, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,7 (521 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 400–500 ₽", "kids": "детское меню (Яндекс Карты); детский стул и удобство с коляской — не проверено", "why": "Кофейня-пекарня с завтраком в карточке, с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/tseh85/156323599306/", "best": false}], "miris": [{"name": "Roni's Donuts", "address": "Малый просп. Петроградской стороны, 82Б", "walk_min": 3, "distance_m": 128, "opens_weekdays": "9:00–21:00", "opens_weekend": "9:00–21:00", "rating_yandex": "4,5 (219 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 250–500 ₽", "kids": "детское меню (Яндекс Карты); детский стул и удобство с коляской — не проверено", "why": "Самый близкий вариант: пончики и кофе, ежедневно с 9:00; рейтинг на нижней границе 4,5.", "url": "https://yandex.ru/maps/org/roni_donuts/68184317631/", "best": false}, {"name": "Хлебник", "address": "Каменноостровский просп., 42", "walk_min": 5, "distance_m": 263, "opens_weekdays": "8:00–21:00", "opens_weekend": "8:00–21:00", "rating_yandex": "4,7 (147 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": null, "why": "Пекарня-кофейня с завтраками, с 8:00 без выходных; оценок немного.", "url": "https://yandex.ru/maps/org/hlebnik/104962754328/", "best": false}, {"name": "Булочная Ф. Вольчека", "address": "Малый просп. Петроградской стороны, 72", "walk_min": 5, "distance_m": 298, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,9 (1225 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": null, "why": "Пекарня с рейтингом 4,9, с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/bulochnaya_f_volcheka/202396315633/", "best": false}, {"name": "Солнечный день", "address": "наб. реки Карповки, 20", "walk_min": 6, "distance_m": 330, "opens_weekdays": "8:00–21:00", "opens_weekend": "8:00–21:00", "rating_yandex": "4,6 (1121 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 200–400 ₽", "kids": null, "why": "Недорогая столовая-кафе с завтраками, с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/sunny_day/64919090552/", "best": false}, {"name": "Британские пекарни", "address": "Большой просп. Петроградской стороны, 80", "walk_min": 6, "distance_m": 354, "opens_weekdays": "8:00–22:00", "opens_weekend": "9:00–22:00", "rating_yandex": "5,0 (4192 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": "детское меню (Яндекс Карты); детский стул и удобство с коляской — не проверено", "why": "Пекарня-кофейня с рейтингом 5,0 на 4000+ оценок, завтрак в карточке; в выходные с 9:00.", "url": "https://yandex.ru/maps/org/britanskiye_pekarni/1131940027/", "best": true}, {"name": "Монтекки", "address": "Большой просп. Петроградской стороны, 74", "walk_min": 7, "distance_m": 385, "opens_weekdays": "8:00–1:00", "opens_weekend": "8:00–1:00", "rating_yandex": "4,6 (3983 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 1000–1500 ₽", "kids": "детское меню, «для детей» и детская зона с няней (Яндекс Карты); в отзывах: по выходным занимают детей, но есть жалобы на состояние детской комнаты; детский стул и коляска — не проверено", "why": "Ресторан с детской комнатой, завтрак с 8:00; дороже других.", "url": "https://yandex.ru/maps/org/montekki/1336937422/", "best": false}], "izzziup": [{"name": "Санисайд", "address": "Гороховая ул., 47Б", "walk_min": 2, "distance_m": 63, "opens_weekdays": "8:55–20:00 (пт 8:55–21:00)", "opens_weekend": "8:55–21:00", "rating_yandex": "5,0 (116 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 1000–1200 ₽", "kids": "детское меню и «для детей» (Яндекс Карты); детский стул и удобство с коляской — не проверено", "why": "В соседнем здании, завтрак в карточке; открывается в 8:55 — впритык к 9:00; оценок немного.", "url": "https://yandex.ru/maps/org/sanisayd/33288936181/", "best": false}, {"name": "Millor", "address": "Гороховая ул., 53", "walk_min": 2, "distance_m": 123, "opens_weekdays": "8:00–21:00", "opens_weekend": "8:00–21:00", "rating_yandex": "5,0 (361 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 350 ₽", "kids": null, "why": "Кофейня с 8:00 без выходных, 5,0; полноценный завтрак в карточке не указан.", "url": "https://yandex.ru/maps/org/millor/153760168918/", "best": false}, {"name": "Булочная Ф. Вольчека", "address": "Гороховая ул., 43", "walk_min": 4, "distance_m": 194, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "5,0 (166 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": null, "why": "Пекарня в пределах 4 минут, с 8:00 без выходных; оценок меньше, чем у других точек сети.", "url": "https://yandex.ru/maps/org/bulochnaya_f_volcheka/91815817010/", "best": false}, {"name": "ЛюдиЛюбят", "address": "Сенная площадь, 4", "walk_min": 4, "distance_m": 194, "opens_weekdays": "6:00–0:00", "opens_weekend": "6:00–0:00", "rating_yandex": "4,6 (603 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 200–400 ₽", "kids": null, "why": "Пекарня-кафе с завтраками, работает с 6:00 до полуночи, недорого.", "url": "https://yandex.ru/maps/org/lyudilyubyat/107247631270/", "best": false}, {"name": "Гурман", "address": "Гороховая ул., 41", "walk_min": 4, "distance_m": 209, "opens_weekdays": "круглосуточно", "opens_weekend": "круглосуточно", "rating_yandex": "5,0 (319 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 210–1000 ₽", "kids": "детское меню (Яндекс Карты); детский стул и удобство с коляской — не проверено", "why": "Круглосуточно, завтрак в карточке, 5,0; гибкий чек.", "url": "https://yandex.ru/maps/org/gourmet/135688234854/", "best": true}, {"name": "Булочная Ф. Вольчека", "address": "пер. Гривцова, 26", "walk_min": 5, "distance_m": 298, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,9 (1693 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": null, "why": "Пекарня с рейтингом 4,9 на 1600+ оценок, с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/bulochnaya_f_volcheka/1683695828/", "best": false}], "svet": [{"name": "Baggins Coffee", "address": "просп. Просвещения, 83", "walk_min": 1, "distance_m": 8, "opens_weekdays": "8:00–21:00", "opens_weekend": "9:00–21:00", "rating_yandex": "5,0 (409 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": "в отзывах: книги, игры и раскраски для детей, напитки из детского меню; детский стул и удобство с коляской — не проверено", "why": "Кофейня в самом здании, 5,0; полноценный завтрак в карточке не указан.", "url": "https://yandex.ru/maps/org/baggins_coffee/106716207141/", "best": false}, {"name": "Теремок", "address": "просп. Просвещения, 80, корп. 3", "walk_min": 4, "distance_m": 185, "opens_weekdays": "8:00–23:00", "opens_weekend": "8:00–23:00", "rating_yandex": "5,0 (282 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": "в отзывах: есть детский уголок, внимание сотрудников к гостям с малышом; детский стул и коляска — не проверено", "why": "Блинная с 8:00 без выходных, детский уголок.", "url": "https://yandex.ru/maps/org/teremok/125366421694/", "best": false}, {"name": "Буше", "address": "просп. Просвещения, 80, корп. 1", "walk_min": 4, "distance_m": 204, "opens_weekdays": "8:00–22:00", "opens_weekend": "9:00–22:00", "rating_yandex": "4,8 (938 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": "в отзыве: «есть возможность присесть с маленьким ребёнком»; детское меню, детский стул и коляска — не проверено", "why": "Кафе-пекарня с завтраком в карточке, 4,8; в выходные с 9:00.", "url": "https://yandex.ru/maps/org/bushe/43307538257/", "best": true}, {"name": "Булочная Ф. Вольчека", "address": "ул. Брянцева, 20, корп. 1", "walk_min": 5, "distance_m": 256, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,8 (1485 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": null, "why": "Пекарня с рейтингом 4,8, с 8:00 без выходных.", "url": "https://yandex.ru/maps/org/bulochnaya_f_volcheka/1694483020/", "best": false}, {"name": "Лавка Пекаря", "address": "просп. Просвещения, 87, корп. 1", "walk_min": 5, "distance_m": 262, "opens_weekdays": "8:00–21:00", "opens_weekend": "8:00–21:00", "rating_yandex": "4,5 (305 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": null, "why": "Пекарня-кофейня с 8:00 без выходных; рейтинг на нижней границе 4,5.", "url": "https://yandex.ru/maps/org/lavka_pekarya/138471445492/", "best": false}], "tavrichesky": [{"name": "Ленинградские булочные", "address": "Тверская ул., 18", "walk_min": 4, "distance_m": 208, "opens_weekdays": "8:00–22:00", "opens_weekend": "8:00–22:00", "rating_yandex": "4,7 (1238 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 200–250 ₽", "kids": "в отзыве: ходят сюда с ребёнком, но жалоба на чистоту туалета; детское меню, детский стул и коляска — не проверено", "why": "Самая близкая (~4 мин), пекарня-кофейня с завтраком в карточке, с 8:00 без выходных, чек 200–250 ₽.", "url": "https://yandex.ru/maps/org/leningradskie_bulochnie/28051782194/", "best": true}, {"name": "Хлебник", "address": "Суворовский просп., 56", "walk_min": 7, "distance_m": 408, "opens_weekdays": "7:00–21:00", "opens_weekend": "7:00–21:00", "rating_yandex": "4,5 (801 оценок)", "rating_2gis": "не проверено", "avg_check": "не указан", "kids": null, "why": "Пекарня-кофейня с 7:00 ежедневно; рейтинг на нижней границе 4,5.", "url": "https://yandex.ru/maps/org/hlebnik/210743093024/", "best": false}, {"name": "Vлаvаше", "address": "Суворовский просп., 56", "walk_min": 8, "distance_m": 433, "opens_weekdays": "8:00–1:00", "opens_weekend": "8:00–1:00", "rating_yandex": "4,8 (654 оценок)", "rating_2gis": "не проверено", "avg_check": "чек от 246 ₽", "kids": "детское меню (Яндекс Карты); детский стул и удобство с коляской — не проверено", "why": "Быстрое питание/кафе с завтраком в карточке, с 8:00 без выходных, недорого.", "url": "https://yandex.ru/maps/org/vlavashe/175305003822/", "best": false}, {"name": "Цех85", "address": "Смольный просп., 17", "walk_min": 10, "distance_m": 562, "opens_weekdays": "7:00–22:00", "opens_weekend": "9:00–22:00", "rating_yandex": "4,5 (877 оценок)", "rating_2gis": "не проверено", "avg_check": "чек 400–500 ₽", "kids": "детское меню (Яндекс Карты); детский стул и удобство с коляской — не проверено", "why": "Кофейня-пекарня с завтраком в карточке; самая дальняя (~10 мин), в выходные с 9:00.", "url": "https://yandex.ru/maps/org/tseh85/235918988429/", "best": false}]};
+  var bstate = "terraplace";
+  try { var bs = localStorage.getItem("piter-bf"); if (bs && BF[bs]) bstate = bs; } catch(e) {}
+  var cafes = document.getElementById("cafes");
+  function renderBF(){
+    var list = BF[bstate].slice().sort(function(a,b){ return (b.best?1:0)-(a.best?1:0) || a.walk_min-b.walk_min; });
+    cafes.innerHTML = list.map(function(c){
+      return '<article class="cafe' + (c.best ? ' best' : '') + '">' +
+        (c.best ? '<div class="best-tag">Лучший вариант</div>' : '') +
+        '<div class="cafe-top"><b>' + esc(c.name) + '</b><span class="walk">' + c.walk_min + ' мин</span></div>' +
+        '<div class="addr">' + esc(c.address) + '</div>' +
+        '<div class="why">' + esc(c.why) + '</div>' +
+        '<dl><dt>Будни</dt><dd>' + esc(c.opens_weekdays) + '</dd><dt>Выходные</dt><dd>' + esc(c.opens_weekend) + '</dd>' +
+        '<dt>Яндекс</dt><dd>' + esc(c.rating_yandex) + '</dd><dt>Чек</dt><dd>' + esc(c.avg_check) + '</dd></dl>' +
+        (c.kids ? '<div class="kids">Детям: ' + esc(c.kids) + '</div>' : '') +
+        '<a class="map" href="' + esc(c.url) + '" target="_blank" rel="noopener">Яндекс Карты ↗</a>' +
+        '</article>';
+    }).join("");
+    document.querySelectorAll("[data-bplace]").forEach(function(b){ b.setAttribute("aria-pressed", String(b.dataset.bplace === bstate)); });
+    try { localStorage.setItem("piter-bf", bstate); } catch(e) {}
+  }
+  document.querySelectorAll("[data-bplace]").forEach(function(b){ b.addEventListener("click", function(){ bstate = b.dataset.bplace; renderBF(); }); });
+  renderBF();
+
+
+  var PH = {"apraksin": [{"f": "photos/apraksin/room-1.jpg", "c": "Квартира 110 м² с 3 комнатами: спальня и обеденная зона", "k": "room"}, {"f": "photos/apraksin/room-2.jpg", "c": "Спальня и диван в светлой комнате", "k": "room"}, {"f": "photos/apraksin/room-3.jpg", "c": "Спальня с двуспальной кроватью и столом", "k": "room"}, {"f": "photos/apraksin/room-4.jpg", "c": "Кухня-гостиная со стиральной машиной", "k": "room"}, {"f": "photos/apraksin/room-5.jpg", "c": "Обеденная зона", "k": "room"}, {"f": "photos/apraksin/room-6.jpg", "c": "Санузел с душевой кабиной", "k": "room"}, {"f": "photos/apraksin/exterior-1.jpg", "c": "Кирпичное здание и ворота во двор со стороны переулка", "k": "exterior"}, {"f": "photos/apraksin/lobby-1.jpg", "c": "Прихожая квартиры у входной двери", "k": "lobby"}, {"f": "photos/apraksin/lobby-2.jpg", "c": "Коридор квартиры", "k": "lobby"}], "dvortsovaya": [{"f": "photos/dvortsovaya/room-1.jpg", "c": "Гостиная-спальня: серый диван, кровать, рабочий стол", "k": "room"}, {"f": "photos/dvortsovaya/room-2.jpg", "c": "Спальня с двуспальной кроватью", "k": "room"}, {"f": "photos/dvortsovaya/room-3.jpg", "c": "Обеденный стол у окна", "k": "room"}, {"f": "photos/dvortsovaya/room-4.jpg", "c": "Кухня со всей техникой", "k": "room"}, {"f": "photos/dvortsovaya/room-5.jpg", "c": "Санузел с ванной и стиральной машиной", "k": "room"}, {"f": "photos/dvortsovaya/room-6.jpg", "c": "Вторая спальня с кроватью с серым изголовьем", "k": "room"}, {"f": "photos/dvortsovaya/exterior-1.jpg", "c": "Здание на набережной Мойки; вдали — Александровская колонна", "k": "exterior"}, {"f": "photos/dvortsovaya/exterior-2.jpg", "c": "Мойка и соседние дома — вид из окна", "k": "exterior"}, {"f": "photos/dvortsovaya/other-1.jpg", "c": "Коридор квартиры", "k": "other"}], "izzziup": [{"f": "photos/izzziup/room-1.jpg", "c": "Номер: кровать у окна и кресло", "k": "room"}, {"f": "photos/izzziup/room-2.jpg", "c": "Номер с кроватью, диваном и мини-кухней", "k": "room"}, {"f": "photos/izzziup/exterior-1.jpg", "c": "Кирпичный фасад внутреннего двора с жёлтым ретро-автомобилем", "k": "exterior"}, {"f": "photos/izzziup/lobby-1.jpg", "c": "Ресепшн в фирменных жёлтых тонах", "k": "lobby"}, {"f": "photos/izzziup/lobby-2.jpg", "c": "Лобби-бар и зона отдыха", "k": "lobby"}, {"f": "photos/izzziup/lobby-3.jpg", "c": "Входная группа со стеклянными дверями", "k": "lobby"}, {"f": "photos/izzziup/courtyard-1.jpg", "c": "Крытый двор-атриум: барная стойка и кирпичные стены", "k": "courtyard"}, {"f": "photos/izzziup/courtyard-2.jpg", "c": "Двор-атриум с жёлтой скульптурой", "k": "courtyard"}, {"f": "photos/izzziup/other-1.jpg", "c": "Завтрак: шведская линия", "k": "other"}], "kazanskogo": [{"f": "photos/kazanskogo/room-1.jpg", "c": "Спальня: двуспальная кровать, шкаф-купе, рабочий стол", "k": "room"}, {"f": "photos/kazanskogo/room-2.jpg", "c": "Мягкий диван в гостиной-спальне", "k": "room"}, {"f": "photos/kazanskogo/room-3.jpg", "c": "Двуспальная кровать с тумбочками", "k": "room"}, {"f": "photos/kazanskogo/room-4.jpg", "c": "Обеденная зона: круглый стол на четверых", "k": "room"}, {"f": "photos/kazanskogo/room-5.jpg", "c": "Кухня с плитой и духовкой", "k": "room"}, {"f": "photos/kazanskogo/room-6.jpg", "c": "Санузел: ванна, раковина и стиральная машина", "k": "room"}, {"f": "photos/kazanskogo/exterior-1.jpg", "c": "Канал Грибоедова рядом с домом", "k": "exterior"}, {"f": "photos/kazanskogo/other-1.jpg", "c": "Казанский собор через канал — в шаговой доступности", "k": "other"}, {"f": "photos/kazanskogo/other-2.jpg", "c": "Прихожая квартиры", "k": "other"}], "lomonosova": [{"f": "photos/lomonosova/room-1.jpg", "c": "Просторная гостиная с угловым диваном", "k": "room"}, {"f": "photos/lomonosova/room-2.jpg", "c": "Гостиная и столовая с высокими потолками", "k": "room"}, {"f": "photos/lomonosova/room-3.jpg", "c": "Спальня с двуспальной кроватью", "k": "room"}, {"f": "photos/lomonosova/room-4.jpg", "c": "Вторая спальня: кровать и бирюзовый диван", "k": "room"}, {"f": "photos/lomonosova/room-5.jpg", "c": "Третья комната: кровать и диван", "k": "room"}, {"f": "photos/lomonosova/room-6.jpg", "c": "Кухня и обеденная зона", "k": "room"}, {"f": "photos/lomonosova/room-7.jpg", "c": "Санузел в тёмном мраморе", "k": "room"}, {"f": "photos/lomonosova/exterior-1.jpg", "c": "Набережная Фонтанки и вид из окон на реку", "k": "exterior"}], "miris": [{"f": "photos/miris/room-1.jpg", "c": "Номер Делюкс: двуспальная кровать и кресло", "k": "room"}, {"f": "photos/miris/room-2.jpg", "c": "Номер Делюкс: кровать, диван и телевизор", "k": "room"}, {"f": "photos/miris/room-3.jpg", "c": "Номер Делюкс: диван и зона отдыха", "k": "room"}, {"f": "photos/miris/room-4.jpg", "c": "Санузел номера Делюкс с душем", "k": "room"}, {"f": "photos/miris/exterior-1.jpg", "c": "Фасад отеля на ул. Всеволода Вишневского", "k": "exterior"}, {"f": "photos/miris/lobby-1.jpg", "c": "Входная группа отеля", "k": "lobby"}, {"f": "photos/miris/lobby-2.jpg", "c": "Лобби с зоной отдыха", "k": "lobby"}, {"f": "photos/miris/lobby-3.jpg", "c": "Стойка ресепшн", "k": "lobby"}, {"f": "photos/miris/other-1.jpg", "c": "Завтрак: шведский стол", "k": "other"}], "nomera": [{"f": "photos/nomera/room-1.jpg", "c": "Апартаменты 39 м² с 2 спальнями: первая спальня", "k": "room"}, {"f": "photos/nomera/room-2.jpg", "c": "Спальня с креслом и телевизором", "k": "room"}, {"f": "photos/nomera/room-3.jpg", "c": "Ещё одна спальня апартаментов", "k": "room"}, {"f": "photos/nomera/room-4.jpg", "c": "Кухня с барной стойкой", "k": "room"}, {"f": "photos/nomera/room-5.jpg", "c": "Санузел с душевой кабиной", "k": "room"}, {"f": "photos/nomera/exterior-1.jpg", "c": "Фасад здания на Гончарной ул., 26", "k": "exterior"}, {"f": "photos/nomera/lobby-1.jpg", "c": "Холл и зона ресепшен отеля", "k": "lobby"}, {"f": "photos/nomera/lobby-2.jpg", "c": "Прихожая у входной двери апартаментов", "k": "lobby"}, {"f": "photos/nomera/other-1.jpg", "c": "Вид на улицу и окрестности из окна", "k": "other"}], "svet": [{"f": "photos/svet/room-1.jpg", "c": "Люкс-апартаменты: двуспальная кровать с деревянной панелью", "k": "room"}, {"f": "photos/svet/room-2.jpg", "c": "Гостиная зона с серым диваном", "k": "room"}, {"f": "photos/svet/room-3.jpg", "c": "Кухонная зона в апартаментах", "k": "room"}, {"f": "photos/svet/room-4.jpg", "c": "Обеденная зона и спальня в апартаментах", "k": "room"}, {"f": "photos/svet/room-5.jpg", "c": "Санузел с душем", "k": "room"}, {"f": "photos/svet/exterior-1.jpg", "c": "Здание отеля и входная группа", "k": "exterior"}, {"f": "photos/svet/lobby-1.jpg", "c": "Ресепшн и лобби", "k": "lobby"}, {"f": "photos/svet/lobby-2.jpg", "c": "Лобби-лаунж с зоной отдыха", "k": "lobby"}, {"f": "photos/svet/courtyard-1.jpg", "c": "Благоустроенный двор жилого комплекса", "k": "courtyard"}], "tavrichesky": [{"f": "photos/tavrichesky/room-1.jpg", "c": "Люкс: кровать с мягким изголовьем", "k": "room"}, {"f": "photos/tavrichesky/room-2.jpg", "c": "Спальня люкса с телевизором", "k": "room"}, {"f": "photos/tavrichesky/room-3.jpg", "c": "Гостиная зона люкса с диваном", "k": "room"}, {"f": "photos/tavrichesky/room-4.jpg", "c": "Люкс: спальня и санузел", "k": "room"}, {"f": "photos/tavrichesky/room-5.jpg", "c": "Рабочая зона у окна", "k": "room"}, {"f": "photos/tavrichesky/exterior-1.jpg", "c": "Вход в отель", "k": "exterior"}, {"f": "photos/tavrichesky/lobby-1.jpg", "c": "Холл с лестницей", "k": "lobby"}, {"f": "photos/tavrichesky/lobby-2.jpg", "c": "Ресепшн и зона ожидания", "k": "lobby"}, {"f": "photos/tavrichesky/lobby-3.jpg", "c": "Лобби-лаунж с креслами", "k": "lobby"}], "terraplace": [{"f": "photos/terraplace/room-1.jpg", "c": "Семейная студия 25 м²: двуспальная кровать, диван и телевизор", "k": "room"}, {"f": "photos/terraplace/room-2.jpg", "c": "Семейная студия: общий вид — кровать, диван, зона у окна", "k": "room"}, {"f": "photos/terraplace/room-3.jpg", "c": "Кровать и обеденный столик в семейной студии", "k": "room"}, {"f": "photos/terraplace/room-4.jpg", "c": "Диван, обеденный стол и мини-кухня в студии", "k": "room"}, {"f": "photos/terraplace/room-5.jpg", "c": "Входная зона и кухонный уголок студии", "k": "room"}, {"f": "photos/terraplace/room-6.jpg", "c": "Санузел с душевой кабиной", "k": "room"}, {"f": "photos/terraplace/exterior-1.jpg", "c": "Фасад здания на Невском пр., 107В", "k": "exterior"}, {"f": "photos/terraplace/lobby-1.jpg", "c": "Ресепшен и лобби-зона отеля", "k": "lobby"}, {"f": "photos/terraplace/lobby-2.jpg", "c": "Лобби-кафе, где подают завтраки", "k": "lobby"}, {"f": "photos/terraplace/courtyard-1.jpg", "c": "Внутренний двор и вход в отель (зимнее фото)", "k": "courtyard"}], "tropicana": [{"f": "photos/tropicana/room-1.jpg", "c": "Гостиная с диваном — квартира 90 м² с 3 спальнями", "k": "room"}, {"f": "photos/tropicana/room-2.jpg", "c": "Кухня-столовая с большим обеденным столом", "k": "room"}, {"f": "photos/tropicana/room-3.jpg", "c": "Спальня с двуспальной кроватью", "k": "room"}, {"f": "photos/tropicana/room-4.jpg", "c": "Вторая спальня", "k": "room"}, {"f": "photos/tropicana/room-5.jpg", "c": "Третья спальня", "k": "room"}, {"f": "photos/tropicana/room-6.jpg", "c": "Санузел с душем", "k": "room"}, {"f": "photos/tropicana/exterior-1.jpg", "c": "Фасад дома на ул. Восстания", "k": "exterior"}, {"f": "photos/tropicana/other-1.jpg", "c": "Прихожая с гладильной зоной и стиральной машиной", "k": "other"}]};
+  var KIND = {room:"Номер",exterior:"Фасад",lobby:"Вход и лобби",courtyard:"Двор",other:"Ещё"};
+  function galHTML(list, i){
+    var x = list[i];
+    return '<button type="button" class="gal-main" aria-label="Открыть фото на весь экран"><img src="' + esc(x.f) + '" alt="' + esc(x.c) + '"' + (i ? '' : ' fetchpriority="high"') + '>' +
+      '<span class="gal-count">' + (i+1) + ' / ' + list.length + '</span>' +
+      '<span class="gal-cap"><b>' + KIND[x.k] + '</b>' + esc(x.c) + '</span></button>' +
+      '<div class="gal-strip">' + list.map(function(y, j){
+        return '<button type="button" data-i="' + j + '" aria-label="' + esc(y.c) + '"' + (j === i ? ' aria-current="true"' : '') + '><img src="' + esc(y.f) + '" alt="" loading="lazy"></button>';
+      }).join("") + '</div>';
+  }
+  var lb = document.getElementById("lb"), lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap"), lbN = document.getElementById("lb-n"), lbName = document.getElementById("lb-name");
+  var cur = null, lastFocus = null;
+  function lbShow(){
+    var x = cur.list[cur.i];
+    lbImg.src = x.f; lbImg.alt = x.c; lbCap.textContent = KIND[x.k] + ". " + x.c; lbN.textContent = (cur.i+1) + " / " + cur.list.length; lbName.textContent = cur.name;
+  }
+  function lbOpen(name, list, i){ cur = {name:name, list:list, i:i}; lastFocus = document.activeElement; lbShow(); lb.hidden = false; document.body.style.overflow = "hidden"; document.getElementById("lb-close").focus(); }
+  function lbClose(){ lb.hidden = true; document.body.style.overflow = ""; if (lastFocus) lastFocus.focus(); }
+  function lbStep(d){ cur.i = (cur.i + d + cur.list.length) % cur.list.length; lbShow(); }
+  document.getElementById("lb-close").addEventListener("click", lbClose);
+  document.getElementById("lb-prev").addEventListener("click", function(){ lbStep(-1); });
+  document.getElementById("lb-next").addEventListener("click", function(){ lbStep(1); });
+  lb.addEventListener("click", function(e){ if (e.target === lb || e.target.classList.contains("lb-stage")) lbClose(); });
+  document.addEventListener("keydown", function(e){
+    if (lb.hidden) return;
+    if (e.key === "Escape") lbClose(); else if (e.key === "ArrowLeft") lbStep(-1); else if (e.key === "ArrowRight") lbStep(1);
+  });
+  var tx = null;
+  lb.addEventListener("touchstart", function(e){ tx = e.touches[0].clientX; }, {passive:true});
+  lb.addEventListener("touchend", function(e){ if (tx == null) return; var dx = e.changedTouches[0].clientX - tx; if (Math.abs(dx) > 50) lbStep(dx < 0 ? 1 : -1); tx = null; });
+  document.querySelectorAll(".gal").forEach(function(g){
+    var list = PH[g.dataset.place]; if (!list) return;
+    var i = 0;
+    function draw(){ g.innerHTML = galHTML(list, i); }
+    g.addEventListener("click", function(e){
+      var t = e.target.closest("button"); if (!t) return;
+      if (t.classList.contains("gal-main")) lbOpen(g.dataset.name, list, i);
+      else if (t.dataset.i) { i = +t.dataset.i; draw(); var b = g.querySelector('[data-i="' + i + '"]'); if (b) b.focus(); }
+    });
+    draw();
+  });
+
+
+  function earliest(c){ var m = /(\d{1,2}):(\d{2})/.exec(c.opens_weekend || ""); return m ? m[1] + ":" + m[2] : c.opens_weekend; }
+  document.querySelectorAll(".bf-mini").forEach(function(el){
+    var list = BF[el.dataset.place];
+    if (!list || !list.length) { el.hidden = true; return; }
+    var top = list.slice().sort(function(a,b){ return (b.best?1:0)-(a.best?1:0) || a.walk_min-b.walk_min; }).slice(0,3);
+    el.innerHTML = '<h4>Завтрак рядом</h4><ul>' + top.map(function(c){
+      return '<li><span><a href="' + esc(c.url) + '" target="_blank" rel="noopener">' + esc(c.name) + '</a>' + (c.best ? '<span class="star">лучший</span>' : '') + '</span>' +
+        '<span class="t">' + c.walk_min + ' мин · вых. с ' + esc(earliest(c)) + ' · ' + esc(String(c.rating_yandex).split(" ")[0]) + '★</span></li>';
+    }).join("") + '</ul>';
+  });
+
+  document.querySelectorAll(".checks input").forEach(function(cb){
+    try { cb.checked = localStorage.getItem("piter-" + cb.id) === "1"; } catch(e) {}
+    cb.addEventListener("change", function(){ try { localStorage.setItem("piter-" + cb.id, cb.checked ? "1" : "0"); } catch(e) {} });
+  });
+})();
+</script>
+
+</body>
+</html>
